@@ -504,4 +504,4 @@ Redistribution or commercial use without written permission is not permitted.
 
 ---
 
-*Shaping Rwanda's Technical Workforce — Gicumbi District, Northern Province, Rwanda*
+Shaping Rwanda's Technical Workforce — Gicumbi District, Northern Province, Rwanda*
