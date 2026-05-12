@@ -1,0 +1,74 @@
+
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-soft) 100%);color:var(--white);padding:44px 0;margin-bottom:0}
+.page-hero .ph-kicker{font-size:11px;font-weight:700;color:var(--gold-line);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;display:block}
+.page-hero h2{font-family:'Playfair Display',serif;font-size:34px;font-weight:800;color:var(--white);margin-bottom:8px}
+.page-hero .ph-sub{font-size:15px;color:rgba(255,255,255,.72)}
+.ph-breadcrumb{font-size:12px;color:rgba(255,255,255,.45);margin-bottom:10px}
+.ph-breadcrumb a{color:var(--gold-line)}
+
+.history-text{font-size:15.5px;color:var(--text-mid);line-height:1.85}
+.history-text p+p{margin-top:14px}
+
+.timeline{display:flex;flex-direction:column;gap:0}
+.tl-item{display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid var(--border);position:relative}
+.tl-item:last-child{border-bottom:none}
+.tl-year-box{flex-shrink:0;width:80px;text-align:center;background:var(--navy);color:var(--white);border-radius:var(--radius-sm);padding:8px 6px;font-family:'Playfair Display',serif}
+.tl-year{display:block;font-size:14px;font-weight:800;color:var(--gold-line);line-height:1}
+.tl-era{font-size:10px;color:rgba(255,255,255,.5);font-weight:500;margin-top:2px;display:block}
+.tl-dot{position:absolute;left:92px;top:28px;width:10px;height:10px;border-radius:50%;background:var(--gold);border:2px solid var(--white);z-index:1}
+.tl-content{padding-left:14px;border-left:2px solid var(--border);flex:1}
+.tl-content strong{display:block;font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px}
+.tl-content p{font-size:14px;color:var(--text-soft);line-height:1.7}
+
+.mvv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:10px}
+.mvv-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-xs);padding:24px;border-top:4px solid var(--gold);position:relative;overflow:hidden}
+.mvv-card::before{content:'';position:absolute;top:-20px;right:-20px;width:80px;height:80px;border-radius:50%;background:var(--gold-pale);opacity:.5}
+.mvv-icon{font-size:28px;margin-bottom:14px;display:block}
+.mvv-card h4{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.mvv-card p{font-size:14px;color:var(--text-mid);line-height:1.8}
+
+.values-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.val-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-xs);padding:18px;display:flex;gap:14px;align-items:flex-start}
+.val-num{width:36px;height:36px;border-radius:50%;background:var(--navy);color:var(--white);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:16px;font-weight:800;flex-shrink:0}
+.val-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px;display:block}
+.val-desc{font-size:13.5px;color:var(--text-soft);line-height:1.7}
+
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.team-card{background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-xs);padding:22px;display:flex;gap:16px;align-items:flex-start;transition:box-shadow var(--t),transform var(--t)}
+.team-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px)}
+.team-avatar{width:56px;height:56px;border-radius:50%;background:var(--navy);border:3px solid var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;font-weight:800;color:var(--white);flex-shrink:0}
+.team-info h4{font-family:'Playfair Display',serif;font-size:16px;font-weight:700;color:var(--navy);margin-bottom:5px}
+.team-role{display:inline-block;font-size:11px;font-weight:700;background:var(--gold-pale);color:var(--gold);border:1px solid var(--gold-line);padding:2px 10px;border-radius:20px;margin-bottom:8px;text-transform:uppercase;letter-spacing:.4px}
+.team-info p{font-size:13px;color:var(--text-soft);line-height:1.65}
+
+@media(max-width:680px){.mvv-grid{grid-template-columns:1fr}.values-grid{grid-template-columns:1fr}.team-grid{grid-template-columns:1fr}}
+
+.card-body-timeline{padding:8px 20px}
+.sec-head-core-values{margin-top:32px}
+.sec-head-leadership{margin-top:32px}
+.sb-enroll-btn-wrapper{padding:0 16px 16px}
+.sb-enroll-btn{width:100%;justify-content:center}
+
+[data-theme="dark"] .history-text { color: #B8C8E8; }
+[data-theme="dark"] .tl-content { border-color: #2C3248; }
+[data-theme="dark"] .tl-item { border-color: #2C3248; }
+[data-theme="dark"] .tl-content strong { color: #D8E8FF; }
+[data-theme="dark"] .tl-content p { color: #7A90B8; }
+[data-theme="dark"] .mvv-card { background: #1A1E2E; border-color: #2C3248; border-top-color: var(--gold-line); }
+[data-theme="dark"] .mvv-card::before { background: rgba(191,155,48,.06); }
+[data-theme="dark"] .mvv-card p { color: #B8C8E8; }
+[data-theme="dark"] .val-card { background: #1A1E2E; border-color: #2C3248; }
+[data-theme="dark"] .val-desc { color: #7A90B8; }
+[data-theme="dark"] .team-card { background: #1A1E2E; border-color: #2C3248; }
+[data-theme="dark"] .team-info p { color: #7A90B8; }
+
+[data-theme="brown"] .history-text { color: #4A2810; }
+[data-theme="brown"] .tl-item { border-color: #DEC89A; }
+[data-theme="brown"] .tl-content { border-color: #DEC89A; }
+[data-theme="brown"] .tl-content strong { color: #3B1F0A; }
+[data-theme="brown"] .mvv-card { background: #FFFAF3; border-color: #DEC89A; border-top-color: var(--gold-line); }
+[data-theme="brown"] .val-card { background: #FFFAF3; border-color: #DEC89A; }
+[data-theme="brown"] .val-num { background: #5C3015; }
+[data-theme="brown"] .team-card { background: #FFFAF3; border-color: #DEC89A; }
+[data-theme="brown"] .team-avatar { background: #5C3015; border-color: var(--gold-line); }
+[data-theme="brown"] .team-role { background: #F5E8CC; color: #8A5020; border-color: var(--gold-line); }

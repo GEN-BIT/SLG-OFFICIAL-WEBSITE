@@ -1,0 +1,393 @@
+/* virtual-tour.css — Virtual Campus Tour & Map Page */
+
+.page-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+  color: var(--white);
+  padding: 44px 0;
+}
+
+.page-hero .ph-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold-line);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.page-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.page-hero .ph-sub {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.ph-breadcrumb {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 10px;
+}
+
+.ph-breadcrumb a {
+  color: var(--gold-line);
+}
+
+/* Tour Viewer */
+.tour-viewer {
+  margin-bottom: 44px;
+  background: var(--white);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.tour-placeholder {
+  background: linear-gradient(135deg, var(--page-bg) 0%, #E8F1FF 100%);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 60px 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+.tour-placeholder h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 12px;
+}
+
+.tour-placeholder p {
+  font-size: 15px;
+  color: var(--text-mid);
+  max-width: 500px;
+  margin-bottom: 12px;
+  line-height: 1.7;
+}
+
+/* Locations Grid */
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.location-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow var(--t), transform var(--t), border-color var(--t);
+}
+
+.location-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--gold-line);
+}
+
+/* Section styling */
+.locations-section {
+  margin-top: 44px;
+}
+
+.section-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 24px;
+}
+
+.tour-emoji {
+  font-size: 64px;
+  margin-bottom: 16px;
+}
+
+.tour-cta {
+  margin-top: 16px;
+  font-weight: 700;
+}
+
+.tour-btn {
+  display: inline-flex;
+}
+
+/* Map section */
+.map-section {
+  margin-top: 44px;
+}
+
+.map-emoji {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.map-powered {
+  margin-top: 12px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+/* Visit section */
+.visit-section {
+  margin-top: 44px;
+  background: var(--gold-pale);
+  border: 1px solid var(--gold-line);
+  border-radius: var(--radius);
+  padding: 28px;
+}
+
+.visit-heading {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 16px;
+}
+
+.visit-intro {
+  color: var(--text-mid);
+  margin-bottom: 16px;
+}
+
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.visit-info {
+  color: var(--text-mid);
+  font-size: 14px;
+}
+
+.visit-grid strong {
+  color: var(--navy);
+}
+
+/* Sidebar formats */
+.sb-formats {
+  padding: 16px;
+  font-size: 13px;
+  color: var(--text-mid);
+}
+
+.sb-formats p {
+  margin-bottom: 12px;
+}
+
+.sb-formats strong {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.sb-formats p:last-child {
+  margin-bottom: 0;
+}
+
+/* Sidebar directions */
+.sb-directions {
+  padding: 16px;
+  font-size: 13px;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+
+.sb-directions strong {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+
+.location-image {
+  font-size: 48px;
+  margin-bottom: 12px;
+  display: block;
+}
+
+.location-card h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+}
+
+.location-card p {
+  font-size: 13px;
+  color: var(--text-soft);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Map Container */
+.map-container {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+}
+
+.map-placeholder {
+  background: linear-gradient(135deg, #F0F4FF 0%, #E8F1FF 100%);
+  border: 1px dashed #BFD3FF;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 40px;
+  text-align: center;
+  color: var(--text-mid);
+}
+
+.map-placeholder h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+}
+
+.map-placeholder p {
+  font-size: 14px;
+  color: var(--text-mid);
+  margin: 0;
+  max-width: 400px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .locations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .locations-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tour-placeholder {
+    padding: 40px 24px;
+    min-height: 300px;
+  }
+
+  .tour-placeholder h3 {
+    font-size: 20px;
+  }
+
+  .page-hero h2 {
+    font-size: 26px;
+  }
+
+  .location-image {
+    font-size: 36px;
+  }
+}
+
+/* ── VIRTUAL TOUR PAGE THEME OVERRIDES ──────────────────────── */
+[data-theme="dark"] .tour-placeholder {
+  background: #1A1E2E;
+  border-color: #2C3248;
+}
+
+[data-theme="dark"] .tour-placeholder h3 {
+  color: #D8E8FF;
+}
+
+[data-theme="dark"] .tour-placeholder p {
+  color: #B8C8E8;
+}
+
+[data-theme="dark"] .location-card {
+  background: #1A1E2E;
+  border-color: #2C3248;
+}
+
+[data-theme="dark"] .location-card:hover {
+  border-color: #3A4A6A;
+}
+
+[data-theme="dark"] .location-card h4 {
+  color: #D8E8FF;
+}
+
+[data-theme="dark"] .location-card p {
+  color: #7A90B8;
+}
+
+[data-theme="dark"] .map-placeholder {
+  background: #0D1630;
+  border-color: #2A4A7A;
+}
+
+[data-theme="dark"] .map-placeholder h4 {
+  color: #D8E8FF;
+}
+
+[data-theme="dark"] .map-placeholder p {
+  color: #B8C8E8;
+}
+
+[data-theme="brown"] .tour-placeholder {
+  background: #FEF8F3;
+  border-color: #DEC89A;
+}
+
+[data-theme="brown"] .tour-placeholder h3 {
+  color: #5C3015;
+}
+
+[data-theme="brown"] .tour-placeholder p {
+  color: #6B4423;
+}
+
+[data-theme="brown"] .location-card {
+  background: #FEF8F3;
+  border-color: #DEC89A;
+}
+
+[data-theme="brown"] .location-card:hover {
+  border-color: #B8750A;
+}
+
+[data-theme="brown"] .location-card h4 {
+  color: #5C3015;
+}
+
+[data-theme="brown"] .location-card p {
+  color: #8B5A2B;
+}
+
+[data-theme="brown"] .map-placeholder {
+  background: #F9F3E1;
+  border-color: #DEC89A;
+}
+
+[data-theme="brown"] .map-placeholder h4 {
+  color: #5C3015;
+}
+
+[data-theme="brown"] .map-placeholder p {
+  color: #6B4423;
+}

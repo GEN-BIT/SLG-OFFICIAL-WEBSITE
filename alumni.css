@@ -1,0 +1,349 @@
+/* alumni.css — Alumni Success Stories Page */
+
+.page-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+  color: var(--white);
+  padding: 44px 0;
+}
+
+.page-hero .ph-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold-line);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.page-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.page-hero .ph-sub {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.ph-breadcrumb {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 10px;
+}
+
+.ph-breadcrumb a {
+  color: var(--gold-line);
+}
+
+/* Alumni Stats */
+.alumni-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+  margin-bottom: 44px;
+  background: var(--white);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+
+.alumni-stat {
+  background: var(--white);
+  padding: 28px 16px;
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+
+.alumni-stat:last-child {
+  border-right: none;
+}
+
+.stat-number {
+  display: block;
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--navy);
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Alumni Stories Grid */
+.stories-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.alumni-story {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--t), transform var(--t), border-color var(--t);
+  display: flex;
+  flex-direction: column;
+}
+
+.alumni-story:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-4px);
+  border-color: var(--gold-line);
+}
+
+.story-image {
+  background: linear-gradient(135deg, var(--navy-soft) 0%, var(--navy) 100%);
+  padding: 32px 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-image::after {
+  content: '';
+  position: absolute;
+  top: -30px;
+  right: -30px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.story-avatar {
+  font-size: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
+
+.story-program {
+  display: inline-block;
+  padding: 6px 14px;
+  background: var(--gold-pale);
+  color: var(--navy);
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border: 1px solid var(--gold-line);
+}
+
+.story-content {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex: 1;
+}
+
+.story-content h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0;
+}
+
+.story-role {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--gold);
+  margin: 0;
+}
+
+.story-text {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.7;
+  margin: 0;
+}
+
+.story-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  font-size: 12px;
+  color: var(--text-soft);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .alumni-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .alumni-stat {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .alumni-stat:nth-child(2),
+  .alumni-stat:nth-child(4) {
+    border-right: none;
+  }
+
+  .alumni-stat:nth-child(3),
+  .alumni-stat:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .stories-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .alumni-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-number {
+    font-size: 24px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  .page-hero h2 {
+    font-size: 26px;
+  }
+
+  .story-avatar {
+    font-size: 48px;
+    width: 80px;
+    height: 80px;
+  }
+
+  .story-content {
+    padding: 18px;
+  }
+
+  .story-content h3 {
+    font-size: 16px;
+  }
+}
+
+/* ── ALUMNI PAGE THEME OVERRIDES ──────────────────────── */
+[data-theme="dark"] .alumni-stats {
+  background: #1A1E2E;
+}
+
+[data-theme="dark"] .alumni-stat {
+  background: #141828;
+  border-right-color: #2C3248;
+  border-bottom-color: #2C3248;
+}
+
+[data-theme="dark"] .stat-number {
+  color: #D8E8FF;
+}
+
+[data-theme="dark"] .stat-label {
+  color: #7A90B8;
+}
+
+[data-theme="dark"] .alumni-story {
+  background: #1A1E2E;
+  border-color: #2C3248;
+}
+
+[data-theme="dark"] .alumni-story:hover {
+  border-color: #3A4A6A;
+}
+
+[data-theme="dark"] .story-image {
+  background: linear-gradient(135deg, #0D1630 0%, #151E35 100%);
+}
+
+[data-theme="dark"] .story-content h3 {
+  color: #D8E8FF;
+}
+
+[data-theme="dark"] .story-role {
+  color: var(--gold-line);
+}
+
+[data-theme="dark"] .story-text {
+  color: #B8C8E8;
+}
+
+[data-theme="dark"] .story-meta {
+  border-top-color: #2C3248;
+  color: #7A90B8;
+}
+
+[data-theme="brown"] .alumni-stats {
+  background: #FEF8F3;
+}
+
+[data-theme="brown"] .alumni-stat {
+  background: #FEF8F3;
+  border-right-color: #DEC89A;
+  border-bottom-color: #DEC89A;
+}
+
+[data-theme="brown"] .stat-number {
+  color: #5C3015;
+}
+
+[data-theme="brown"] .stat-label {
+  color: #8B5A2B;
+}
+
+[data-theme="brown"] .alumni-story {
+  background: #FEF8F3;
+  border-color: #DEC89A;
+}
+
+[data-theme="brown"] .alumni-story:hover {
+  border-color: #B8750A;
+}
+
+[data-theme="brown"] .story-image {
+  background: linear-gradient(135deg, #6B4423 0%, #5C3015 100%);
+}
+
+[data-theme="brown"] .story-content h3 {
+  color: #5C3015;
+}
+
+[data-theme="brown"] .story-role {
+  color: #B8750A;
+}
+
+[data-theme="brown"] .story-text {
+  color: #6B4423;
+}
+
+[data-theme="brown"] .story-meta {
+  border-top-color: #DEC89A;
+  color: #8B5A2B;
+}

@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Enrollment Form | Saint Laurent Gaseke TSS</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <link rel="stylesheet" href="enrollment-form.css"/>
+  <script src="theme.js"></script>
+  <script src="search.js"></script>
+</head>
+<body>
+
+<div class="top-ribbon">
+  <div class="container ribbon-inner">
+    <span class="ribbon-left">Gicumbi District &mdash; Northern Province, Rwanda</span>
+    <span class="ribbon-right">
+      <a href="https://rtb.gov.rw" target="_blank" rel="noopener">RTB Rwanda</a>
+      <a href="https://www.mineduc.gov.rw" target="_blank" rel="noopener">MINEDUC</a>
+      <a href="enrollment-form.html" class="ribbon-enroll">Enroll Now</a>
+    </span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a href="index.html" class="brand">
+      <div class="brand-crest"><span class="crest-slg">SLG</span><span class="crest-tss">TSS</span></div>
+      <div class="brand-words">
+        <h1>Saint Laurent Gaseke</h1>
+        <div class="school-tag">Technical Secondary School &mdash; Rwanda</div>
+      </div>
+    </a>
+    <div class="header-contacts">
+      <div class="hc"><div class="hc-ico">&#128222;</div><div><span class="hc-label">Call Us</span><span class="hc-value">+250 781 234 567</span></div></div>
+      <div class="hc"><div class="hc-ico">&#9993;</div><div><span class="hc-label">Email</span><span class="hc-value"><a href="mailto:info@slgtss.rw">info@slgtss.rw</a></span></div></div>
+    </div>
+  </div>
+</header>
+
+<nav class="main-nav">
+  <div class="container nav-inner">
+    <ul class="nav-list" id="navList">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="services.html">Programs</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="announcements.html">Announcements</a></li>
+      <li><a href="alumni.html">Alumni</a></li>
+      <li><a href="virtual-tour.html">Virtual Tour</a></li>
+      <li><a href="staff-directory.html">Staff</a></li>
+      <li><a href="academic-calendar.html">Calendar</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li class="nav-cta"><a href="enrollment-form.html" class="active">Enroll Now &#8594;</a></li>
+    </ul>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="ph-breadcrumb">
+      <a href="index.html">Home</a> › Student Enrollment
+    </div>
+    <span class="ph-kicker">Join Our Programs</span>
+    <h2>Student Enrollment Form</h2>
+    <p class="ph-sub">Apply now to join one of our industry-aligned TVET Level 4 programs. Complete the form below and download your PDF application.</p>
+  </div>
+</div>
+
+<div class="page-wrap">
+  <div class="container">
+    <div class="layout">
+      <div class="main-col">
+
+        <div class="enrollment-intro">
+          <h3>Why Choose Saint Laurent Gaseke TSS?</h3>
+          <div class="intro-grid">
+            <div class="intro-card">
+              <div class="intro-icon">🎯</div>
+              <h4>Industry-Aligned Programs</h4>
+              <p>Curriculum designed with industry partners to meet real workforce demands</p>
+            </div>
+            <div class="intro-card">
+              <div class="intro-icon">👨‍🏫</div>
+              <h4>Expert Instructors</h4>
+              <p>Learn from experienced professionals with real-world industry experience</p>
+            </div>
+            <div class="intro-card">
+              <div class="intro-icon">🔧</div>
+              <h4>Hands-On Learning</h4>
+              <p>80-90% practical training with state-of-the-art equipment and facilities</p>
+            </div>
+            <div class="intro-card">
+              <div class="intro-icon">📜</div>
+              <h4>TVET Level 4 Certified</h4>
+              <p>RTB & MINEDUC accredited nationally recognized qualification</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="enrollment-form-wrapper" id="enrollmentFormWrapper">
+          <form id="enrollmentForm" class="enrollment-form" novalidate>
+
+            <div class="form-section">
+              <h3 class="form-section-title">Personal Information</h3>
+              
+              <div class="form-row">
+                <div class="field">
+                  <label for="firstName">First Name <span class="req">*</span></label>
+                  <input type="text" id="firstName" name="firstName" placeholder="e.g. Enzo" required aria-label="First Name"/>
+                  <span class="error-msg" id="error-firstName"></span>
+                </div>
+                <div class="field">
+                  <label for="lastName">Last Name <span class="req">*</span></label>
+                  <input type="text" id="lastName" name="lastName" placeholder="e.g. IHRWE" required aria-label="Last Name"/>
+                  <span class="error-msg" id="error-lastName"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="dateOfBirth">Date of Birth <span class="req">*</span></label>
+                  <input type="date" id="dateOfBirth" name="dateOfBirth" required aria-label="Date of Birth"/>
+                  <span class="error-msg" id="error-dateOfBirth"></span>
+                </div>
+                <div class="field">
+                  <label for="gender">Gender <span class="req">*</span></label>
+                  <select id="gender" name="gender" required aria-label="Gender">
+                    <option value="">-- Select --</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <span class="error-msg" id="error-gender"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="email">Email Address <span class="req">*</span></label>
+                  <input type="email" id="email" name="email" placeholder="your@email.com" required aria-label="Email Address"/>
+                  <span class="error-msg" id="error-email"></span>
+                </div>
+                <div class="field">
+                  <label for="phone">Phone Number <span class="req">*</span></label>
+                  <input type="tel" id="phone" name="phone" placeholder="+250 7XX XXX XXX" required aria-label="Phone Number"/>
+                  <span class="error-msg" id="error-phone"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="nationalId">Rwanda National ID <span class="req">*</span></label>
+                  <input type="text" id="nationalId" name="nationalId" placeholder="e.g. 1XXXXXXXXXXXXXXXXXX" required aria-label="Rwanda National ID"/>
+                  <span class="error-msg" id="error-nationalId"></span>
+                </div>
+                <div class="field">
+                  <label for="district">District of Origin <span class="req">*</span></label>
+                  <input type="text" id="district" name="district" placeholder="e.g. Gasabo" required aria-label="District of Origin"/>
+                  <span class="error-msg" id="error-district"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 class="form-section-title">Educational Background</h3>
+              
+              <div class="form-row">
+                <div class="field">
+                  <label for="lastSchool">Last School Attended <span class="req">*</span></label>
+                  <input type="text" id="lastSchool" name="lastSchool" placeholder="e.g. Secondary School Name" required aria-label="Last School Attended"/>
+                  <span class="error-msg" id="error-lastSchool"></span>
+                </div>
+                <div class="field">
+                  <label for="examType">Exam Type <span class="req">*</span></label>
+                  <select id="examType" name="examType" required aria-label="Exam Type">
+                    <option value="">-- Select --</option>
+                    <option value="primary">Primary Leaving Exam (PLE)</option>
+                    <option value="olevel">O-Level Certificate</option>
+                    <option value="alevel">A-Level Certificate</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <span class="error-msg" id="error-examType"></span>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="field">
+                  <label for="examScore">Exam Score <span class="req">*</span></label>
+                  <input type="number" id="examScore" name="examScore" placeholder="e.g. 450" min="0" max="1000" required aria-label="Exam Score"/>
+                  <span class="error-msg" id="error-examScore"></span>
+                </div>
+                <div class="field">
+                  <label for="examYear">Year of Exam <span class="req">*</span></label>
+                  <input type="number" id="examYear" name="examYear" placeholder="e.g. 2024" min="1990" max="2100" required aria-label="Year of Exam"/>
+                  <span class="error-msg" id="error-examYear"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 class="form-section-title">Program Selection</h3>
+              
+              <div class="field">
+                <label>Preferred Program <span class="req">*</span></label>
+                <div class="radio-group">
+                  <label class="radio-label">
+                    <input type="radio" name="program" value="Software Development (SOD)" required aria-label="Software Development"/>
+                    <strong>Software Development (SOD)</strong> — Web, mobile, and desktop application development
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="program" value="Electrical Technology (ETE)" aria-label="Electrical Technology"/>
+                    <strong>Electrical Technology (ETE)</strong> — Power systems, installation, and maintenance
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="program" value="Electronics (ELE)" aria-label="Electronics"/>
+                    <strong>Electronics (ELE)</strong> — Circuit design, repair, and embedded systems
+                  </label>
+                  <label class="radio-label">
+                    <input type="radio" name="program" value="Building Construction (BDC)" aria-label="Building Construction"/>
+                    <strong>Building Construction (BDC)</strong> — Architecture, structural design, and construction management
+                  </label>
+                </div>
+                <span class="error-msg" id="error-program"></span>
+              </div>
+
+              <div class="field">
+                <label>Second Choice (Optional)</label>
+                <select id="programSecond" name="programSecond" aria-label="Second Choice Program">
+                  <option value="">-- No second choice --</option>
+                  <option value="Software Development (SOD)">Software Development (SOD)</option>
+                  <option value="Electrical Technology (ETE)">Electrical Technology (ETE)</option>
+                  <option value="Electronics (ELE)">Electronics (ELE)</option>
+                  <option value="Building Construction (BDC)">Building Construction (BDC)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-section">
+              <h3 class="form-section-title">Terms &amp; Conditions</h3>
+              
+              <div class="field">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="agreeTerms" name="agreeTerms" required aria-label="Agree to Terms and Conditions"/>
+                  <span>I have read and agree to the <a href="#" target="_blank">terms and conditions</a> <span class="req">*</span></span>
+                </label>
+                <span class="error-msg" id="error-agreeTerms"></span>
+              </div>
+
+              <div class="field">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="agreePrivacy" name="agreePrivacy" required aria-label="Agree to Privacy Policy"/>
+                  <span>I agree to the <a href="#" target="_blank">privacy policy</a> <span class="req">*</span></span>
+                </label>
+                <span class="error-msg" id="error-agreePrivacy"></span>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="submit" class="btn btn-gold btn-lg">Submit Application</button>
+              <button type="button" id="downloadPdfBtn" class="btn btn-ghost hidden-element">📥 Download PDF</button>
+              <button type="reset" class="btn btn-secondary">Clear Form</button>
+            </div>
+
+            <div class="form-msg ok hidden-element" id="okMsg">
+              ✓ Your application has been submitted successfully! You will receive a confirmation email shortly. A PDF copy has been generated for your records.
+            </div>
+            <div class="form-msg err hidden-element" id="errMsg">
+              ✗ Please complete all required fields correctly before submitting.
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+      <aside class="sidebar-col">
+        <div class="sb-widget">
+          <div class="sb-widget-head">📋 Important Info</div>
+          <div class="sb-widget-body">
+            <h4>Intake Periods</h4>
+            <p><strong>February</strong> and <strong>September</strong> every year</p>
+            <h4 class="mt-16">Application Deadline</h4>
+            <p><strong>August 15, 2026</strong> (Second Intake)</p>
+            <h4 class="mt-16">Program Duration</h4>
+            <p><strong>3 Years</strong> (Full-time)</p>
+          </div>
+        </div>
+        <div class="sb-widget">
+          <div class="sb-widget-head">📞 Need Help?</div>
+          <div class="sb-widget-body">
+            <p>Contact our admissions office:</p>
+            <p><strong>Phone:</strong> <a href="tel:+250781234567">+250 781 234 567</a></p>
+            <p><strong>Email:</strong> <a href="mailto:admissions@slgtss.rw">admissions@slgtss.rw</a></p>
+            <p><strong>Visit:</strong> Gicumbi District, Northern Province</p>
+          </div>
+        </div>
+        <div class="sb-widget">
+          <div class="sb-widget-head">🎓 Our Programs</div>
+          <div class="sb-widget-body">
+            <ul class="sb-nav-links">
+              <li><a href="services.html#sod">Software Development</a></li>
+              <li><a href="services.html#ete">Electrical Technology</a></li>
+              <li><a href="services.html#ele">Electronics</a></li>
+              <li><a href="services.html#bdc">Building Construction</a></li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-cols">
+      <div class="fcol">
+        <div class="footer-head">Saint Laurent Gaseke TSS</div>
+        <p class="footer-desc">A TVET Level 4 institution accredited by Rwanda TVET Board (RTB) and Ministry of Education (MINEDUC), preparing technical professionals for Rwanda's growing economy.</p>
+        <div class="social-icons">
+          <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="Twitter">𝕏</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="Instagram">📷</a>
+          <a href="https://youtube.com" target="_blank" rel="noopener" aria-label="YouTube">▶</a>
+        </div>
+      </div>
+      <div class="fcol">
+        <div class="footer-head">Quick Links</div>
+        <ul class="footer-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="services.html">Programs</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <div class="footer-head">Support</div>
+        <ul class="footer-list">
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="announcements.html">Announcements</a></li>
+          <li><a href="academic-calendar.html">Calendar</a></li>
+          <li><a href="staff-directory.html">Staff Directory</a></li>
+          <li><a href="alumni.html">Alumni</a></li>
+        </ul>
+      </div>
+      <div class="fcol">
+        <div class="footer-head">Contact Info</div>
+        <p><strong>Address:</strong> Gicumbi District, Northern Province, Rwanda</p>
+        <p><strong>Phone:</strong> <a href="tel:+250781234567">+250 781 234 567</a></p>
+        <p><strong>Email:</strong> <a href="mailto:info@slgtss.rw">info@slgtss.rw</a></p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2024 Saint Laurent Gaseke TSS. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </div>
+  </div>
+</footer>
+
+<script src="enrollment-form.js"></script>
+<script>
+  // Burger menu toggle
+  const burger = document.getElementById('burger');
+  const navList = document.getElementById('navList');
+  if(burger && navList) {
+    burger.addEventListener('click', function() {
+      navList.classList.toggle('open');
+      burger.classList.toggle('is-open');
+    });
+  }
+</script>
+
+</body>
+</html>

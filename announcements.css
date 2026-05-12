@@ -1,0 +1,254 @@
+/* announcements.css — Announcements & Notices Page */
+
+.page-hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-soft) 100%);
+  color: var(--white);
+  padding: 44px 0;
+}
+
+.page-hero .ph-kicker {
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--gold-line);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  display: block;
+}
+
+.page-hero h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.page-hero .ph-sub {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.ph-breadcrumb {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 10px;
+}
+
+.ph-breadcrumb a {
+  color: var(--gold-line);
+}
+
+/* Announcements List */
+.announcements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.announcement-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow-xs);
+  transition: box-shadow var(--t), transform var(--t), border-color var(--t);
+}
+
+.announcement-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+  border-color: var(--gold-line);
+}
+
+.announcement-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.announcement-date {
+  font-size: 12px;
+  color: var(--text-soft);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.announcement-date::before {
+  content: '📅';
+  font-size: 14px;
+}
+
+.announcement-category {
+  display: inline-block;
+  padding: 4px 12px;
+  font-size: 11px;
+  font-weight: 700;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.category-important {
+  background: #FEE2E2;
+  color: #991B1B;
+  border: 1px solid #FECACA;
+}
+
+.category-event {
+  background: #DDD6FE;
+  color: #4338CA;
+  border: 1px solid #C4B5FD;
+}
+
+.category-academic {
+  background: #E0E7FF;
+  color: #1E40AF;
+  border: 1px solid #BFDbFE;
+}
+
+.category-maintenance {
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FCD34D;
+}
+
+.category-achievement {
+  background: #D1FAE5;
+  color: #065F46;
+  border: 1px solid #6EE7B7;
+}
+
+.category-scholarship {
+  background: #D4FC79;
+  color: #3F6212;
+  border: 1px solid #86EFAC;
+}
+
+.announcement-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.announcement-body {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.announcement-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: var(--navy-soft);
+  color: var(--white);
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 700;
+  transition: background var(--t), color var(--t);
+}
+
+.announcement-link:hover {
+  background: var(--navy);
+  color: var(--white);
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .announcement-card {
+    padding: 18px;
+  }
+
+  .announcement-title {
+    font-size: 18px;
+  }
+
+  .announcement-body {
+    font-size: 13px;
+  }
+
+  .announcement-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .page-hero h2 {
+    font-size: 26px;
+  }
+}
+
+/* ── ANNOUNCEMENTS PAGE THEME OVERRIDES ──────────────────────── */
+[data-theme="dark"] .announcement-card {
+  background: #1A1E2E;
+  border-color: #2C3248;
+}
+
+[data-theme="dark"] .announcement-card:hover {
+  border-color: #3A4A6A;
+}
+
+[data-theme="dark"] .announcement-title {
+  color: #D8E8FF;
+}
+
+[data-theme="dark"] .announcement-body {
+  color: #B8C8E8;
+}
+
+[data-theme="dark"] .announcement-date {
+  color: #7A90B8;
+}
+
+[data-theme="dark"] .announcement-link {
+  background: #0D1630;
+  color: var(--gold-line);
+  border: 1px solid #2A4A7A;
+}
+
+[data-theme="dark"] .announcement-link:hover {
+  background: #152A50;
+  color: var(--gold-line);
+}
+
+[data-theme="brown"] .announcement-card {
+  background: #FEF8F3;
+  border-color: #DEC89A;
+}
+
+[data-theme="brown"] .announcement-card:hover {
+  border-color: #B8750A;
+}
+
+[data-theme="brown"] .announcement-title {
+  color: #5C3015;
+}
+
+[data-theme="brown"] .announcement-body {
+  color: #6B4423;
+}
+
+[data-theme="brown"] .announcement-date {
+  color: #8B5A2B;
+}
+
+[data-theme="brown"] .announcement-link {
+  background: #5C3015;
+  color: #FFF8EE;
+}
+
+[data-theme="brown"] .announcement-link:hover {
+  background: #7A3F1E;
+  color: #FFF8EE;
+}

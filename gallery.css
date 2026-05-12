@@ -1,0 +1,163 @@
+/* gallery.css — full image gallery with per-department sections */
+.page-hero{background:linear-gradient(135deg,var(--navy) 0%,var(--navy-soft) 100%);color:var(--white);padding:44px 0}
+.page-hero .ph-kicker{font-size:11px;font-weight:700;color:var(--gold-line);letter-spacing:1.5px;text-transform:uppercase;margin-bottom:10px;display:block}
+.page-hero h2{font-family:'Playfair Display',serif;font-size:34px;font-weight:800;color:var(--white);margin-bottom:8px}
+.page-hero .ph-sub{font-size:15px;color:rgba(255,255,255,.72)}
+.ph-breadcrumb{font-size:12px;color:rgba(255,255,255,.45);margin-bottom:10px}
+.ph-breadcrumb a{color:var(--gold-line)}
+
+/* FILTER BAR */
+.filter-bar{display:flex;flex-wrap:wrap;gap:9px;align-items:center;margin-bottom:28px;padding:14px 20px;background:var(--white);border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow-xs)}
+.filter-bar strong{font-size:13px;font-weight:700;color:var(--text-soft);text-transform:uppercase;letter-spacing:.5px;margin-right:4px;white-space:nowrap}
+.f-btn{padding:8px 18px;border:2px solid var(--border);background:var(--page-bg);color:var(--navy-mid);font-family:'Source Sans 3',sans-serif;font-size:13px;font-weight:700;border-radius:20px;cursor:pointer;transition:all var(--t)}
+.f-btn:hover:not(.active){border-color:var(--navy-soft);background:var(--gold-pale);color:var(--navy)}
+.f-btn.active{background:var(--navy);color:var(--white);border-color:var(--navy)}
+
+/* DEPT SECTION HEADER */
+.dept-section{margin-bottom:44px}
+.dept-section-header{
+  padding:16px 20px;background:var(--white);
+  border:1px solid var(--border);border-radius:var(--radius);
+  box-shadow:var(--shadow-xs);margin-bottom:18px;
+}
+.dsh-meta{display:flex;align-items:center;gap:16px}
+.dsh-code{
+  color:var(--white);font-family:'Playfair Display',serif;
+  font-size:15px;font-weight:800;
+  padding:10px 16px;border-radius:var(--radius-sm);
+  letter-spacing:1px;white-space:nowrap;flex-shrink:0;
+}
+.dept-section-header h3{
+  font-family:'Playfair Display',serif;font-size:18px;
+  font-weight:800;color:var(--navy);margin-bottom:4px;
+}
+.dept-section-header p{font-size:13px;color:var(--text-soft);line-height:1.6}
+
+/* GALLERY GRID */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+
+/* GALLERY CARD */
+.gal-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow-xs);
+  transition:box-shadow var(--t),transform var(--t);
+  display:flex;flex-direction:column;
+}
+.gal-card:hover{box-shadow:var(--shadow-md);transform:translateY(-4px)}
+
+.gal-img-wrap{
+  position:relative;height:190px;overflow:hidden;
+  background:var(--border);
+}
+.gal-img-wrap img{
+  width:100%;height:100%;object-fit:cover;
+  display:block;transition:transform 0.4s ease;
+}
+.gal-card:hover .gal-img-wrap img{transform:scale(1.05)}
+.gal-img-wrap.img-fallback{
+  display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#1B4F8A,#2A6AB5);
+  font-size:48px;
+}
+
+.gal-dept-ribbon{
+  position:absolute;top:10px;left:10px;
+  color:var(--white);font-size:10px;font-weight:800;
+  letter-spacing:1.5px;padding:3px 10px;border-radius:20px;
+  text-transform:uppercase;opacity:.92;z-index:2;
+}
+
+.gal-info{padding:14px 16px 16px;flex:1;display:flex;flex-direction:column}
+.dept-chip{
+  display:inline-block;font-size:10px;font-weight:800;
+  padding:2px 10px;border-radius:10px;text-transform:uppercase;
+  letter-spacing:.6px;margin-bottom:8px;width:fit-content;
+}
+.gal-info h4{
+  font-family:'Playfair Display',serif;
+  font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.3;
+}
+.gal-info p{font-size:13px;color:var(--text-soft);line-height:1.65;flex:1}
+
+/* FEATURED TABLE */
+.featured-table{width:100%;border-collapse:collapse;font-size:14px}
+.featured-table thead th{background:var(--navy);color:var(--white);padding:12px 16px;text-align:left;font-size:13px;font-weight:700;letter-spacing:.3px}
+.featured-table tbody td{padding:13px 16px;border-bottom:1px solid var(--border);vertical-align:top}
+.featured-table tbody tr:last-child td{border-bottom:none}
+.featured-table tbody tr:hover td{background:var(--gold-pale)}
+.ft-dept{font-size:11px;font-weight:800;padding:2px 9px;border-radius:10px;text-transform:uppercase;letter-spacing:.4px}
+
+/* STATS BAR */
+.gal-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-radius:var(--radius);overflow:hidden;margin-bottom:32px;box-shadow:var(--shadow-xs)}
+.gs-cell{background:var(--white);text-align:center;padding:20px 8px}
+.gs-n{display:block;font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:var(--navy);line-height:1}
+.gs-l{font-size:12px;color:var(--text-soft);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:5px;display:block}
+
+@media(max-width:800px){.gal-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.gal-grid{grid-template-columns:1fr}.dsh-meta{flex-direction:column;align-items:flex-start;gap:10px}.gal-stats{grid-template-columns:1fr 1fr}}
+
+/* ── DEPARTMENT COLORS & STYLES ─────────────────────── */
+/* SOD - Software Development */
+.dept-section-header-sod{border-left:5px solid #1B4F8A}
+.dsh-code-sod{background:#1B4F8A}
+.gal-dept-ribbon-sod{background:#1B4F8A}
+.dept-chip-sod{background:#DBEAFE;color:#1D4ED8}
+.ft-dept-sod{background:#DBEAFE;color:#1D4ED8}
+
+/* ETE - Electrical Technology */
+.dept-section-header-ete{border-left:5px solid #7B4010}
+.dsh-code-ete{background:#7B4010}
+.gal-dept-ribbon-ete{background:#7B4010}
+.dept-chip-ete{background:#FEF3C7;color:#92400E}
+.ft-dept-ete{background:#FEF3C7;color:#92400E}
+
+/* ELE - Electronics */
+.dept-section-header-ele{border-left:5px solid #1A5C38}
+.dsh-code-ele{background:#1A5C38}
+.gal-dept-ribbon-ele{background:#1A5C38}
+.dept-chip-ele{background:#D1FAE5;color:#065F46}
+.ft-dept-ele{background:#D1FAE5;color:#065F46}
+
+/* BDC - Building Construction */
+.dept-section-header-bdc{border-left:5px solid #5C2800}
+.dsh-code-bdc{background:#5C2800}
+.gal-dept-ribbon-bdc{background:#5C2800}
+.dept-chip-bdc{background:#FFE4CC;color:#7C2D12}
+.ft-dept-bdc{background:#FFE4CC;color:#7C2D12}
+
+/* ── INLINE STYLES CONVERTED TO CLASSES ─────────────────────── */
+.sec-head-featured{margin-top:8px}
+.card-body-table{padding:0}
+.ft-desc{font-size:12px;color:var(--text-soft)}
+.sb-enroll-btn-wrapper{padding:0 16px 16px}
+.sb-enroll-btn{width:100%;justify-content:center}
+
+/* ── GALLERY PAGE THEME OVERRIDES ───────────────────────── */
+[data-theme="dark"] .filter-bar { background: #1A1E2E; border-color: #2C3248; }
+[data-theme="dark"] .f-btn { background: #141828; border-color: #2C3248; color: #93B4DC; }
+[data-theme="dark"] .f-btn:hover:not(.active) { background: #1E2A44; border-color: #4A6090; }
+[data-theme="dark"] .gal-card { background: #1A1E2E; border-color: #2C3248; }
+[data-theme="dark"] .gal-info h4 { color: #D8E8FF; }
+[data-theme="dark"] .gal-info p { color: #7A90B8; }
+[data-theme="dark"] .dept-section-header { background: #1A1E2E; border-color: #2C3248; }
+[data-theme="dark"] .dept-section-header h3 { color: #D8E8FF; }
+[data-theme="dark"] .dept-section-header p { color: #7A90B8; }
+[data-theme="dark"] .gal-stats { background: #2C3248; }
+[data-theme="dark"] .gs-cell { background: #1A1E2E; }
+[data-theme="dark"] .gs-n { color: var(--gold-line); }
+[data-theme="dark"] .gs-l { color: #7A90B8; }
+[data-theme="dark"] .featured-table tbody td { border-color: #2C3248; }
+[data-theme="dark"] .featured-table tbody tr:hover td { background: #1E2A44; }
+
+[data-theme="brown"] .filter-bar { background: #FFFAF3; border-color: #DEC89A; }
+[data-theme="brown"] .f-btn { background: #F5E8CC; border-color: #DEC89A; color: #5C3015; }
+[data-theme="brown"] .f-btn:hover:not(.active) { background: #F0D8A8; }
+[data-theme="brown"] .f-btn.active { background: #5C3015; border-color: #5C3015; }
+[data-theme="brown"] .gal-card { background: #FFFAF3; border-color: #DEC89A; }
+[data-theme="brown"] .gal-info h4 { color: #3B1F0A; }
+[data-theme="brown"] .dept-section-header { background: #FFFAF3; border-color: #DEC89A; }
+[data-theme="brown"] .gal-stats { background: #DEC89A; }
+[data-theme="brown"] .gs-cell { background: #FFFAF3; }
+[data-theme="brown"] .gs-n { color: #5C3015; }
+[data-theme="brown"] .featured-table tbody tr:hover td { background: #F5E8CC; }
