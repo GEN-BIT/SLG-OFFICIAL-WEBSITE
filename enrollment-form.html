@@ -372,32 +372,4 @@
     });
   }
 </script>
-<!-- Add this script at the end of enrollment-form.html -->
-<script src="api.js"></script>
-<script>
-  document.getElementById('enrollmentForm').addEventListener('submit', async function(e) {
-    e.preventDefault();
-    
-    const formData = {
-      studentName: document.getElementById('studentName').value,
-      parentName: document.getElementById('parentName').value,
-      email: document.getElementById('email').value,
-      phone: document.getElementById('phone').value,
-      gradeApplying: document.getElementById('gradeApplying').value,
-      previousSchool: document.getElementById('previousSchool').value,
-      message: document.getElementById('message').value
-    };
-
-    try {
-      const result = await submitEnrollment(formData);
-      alert('Enrollment submitted successfully! We will contact you soon.');
-      this.reset();
-    } catch (error) {
-      alert('Error: ' + error.message);
-    }
-  });
-</script>
-<script src="fix-enrollment.js"></script>
-<!-- If you still have api.js linked, that's fine, but this specific file handles the logic -->
-</body>
 </html>
