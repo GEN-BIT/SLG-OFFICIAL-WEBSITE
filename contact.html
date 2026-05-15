@@ -244,20 +244,66 @@
   </div>
   <div class="footer-bottom"><div class="container footer-bottom-inner"><span>&copy; 2024 Saint Laurent Gaseke TSS &mdash; All rights reserved.</span><span>Gicumbi District &mdash; Northern Province &mdash; Rwanda</span></div></div>
 </footer>
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script>
   var b=document.getElementById('burger'),n=document.getElementById('navList');
   if(b){b.addEventListener('click',function(){n.classList.toggle('open');b.classList.toggle('is-open')})}
 </script>
-<!-- Add this script at the end of contact.html -->
 <script src="api.js"></script>
 <script>
   document.getElementById('contactForm').addEventListener('submit', async function(e) {
     e.preventDefault();
-    
+
     const formData = {
       firstName: document.getElementById('fname').value.trim(),
       lastName: document.getElementById('lname').value.trim(),
       email: document.getElementById('femail').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      enquiryType: document.querySelector('input[name="enquiry"]:checked')?.value || 'general',
+      program: document.getElementById('program').value,
+      message: document.getElementById('msg').value.trim()
+    };
+
+    const okMsg = document.getElementById('okMsg');
+    const errMsg = document.getElementById('errMsg');
+    okMsg.style.display = 'none';
+    errMsg.style.display = 'none';
+
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      errMsg.textContent = '❌ Please complete all required fields.';
+      errMsg.style.display = 'block';
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      errMsg.textContent = '❌ Please enter a valid email address.';
+      errMsg.style.display = 'block';
+      return;
+    }
+
+    try {
+      const result = await submitContact(formData);
+      okMsg.style.display = 'none';
+      errMsg.style.display = 'none';
+
+      if (result.success) {
+        okMsg.textContent = '✔ Thank you! Your message has been sent successfully.';
+        okMsg.style.display = 'block';
+        this.reset();
+      } else {
+        errMsg.textContent = `❌ ${result.message || 'Failed to send your message. Please try again.'}`;
+        errMsg.style.display = 'block';
+      }
+    } catch (error) {
+      console.error('Contact form error:', error);
+      errMsg.textContent = `❌ ${error.message || 'Server unavailable. Please try again later.'}`;
+      errMsg.style.display = 'block';
+    }
+  });
+</script>
+</body>
+</html>
       phone: document.getElementById('phone').value.trim(),
       enquiryType: document.querySelector('input[name="enquiry"]:checked')?.value || 'general',
       program: document.getElementById('program').value,
