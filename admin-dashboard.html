@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Admin Dashboard | Saint Laurent Gaseke TSS</title>
+  <link rel="stylesheet" href="shared.css"/>
+  <link rel="stylesheet" href="admin-dashboard.css"/>
+  <script src="theme.js"></script>
+</head>
+<body class="admin-dashboard-page">
+
+<div class="admin-header">
+  <div class="container admin-header-inner">
+    <div class="admin-logo">
+      <div class="alogo-crest">SLG</div>
+      <h1>Admin Dashboard</h1>
+    </div>
+    <div class="admin-user-menu">
+      <span id="adminName" class="admin-name">Admin User</span>
+      <button id="logoutBtn" class="logout-btn">Sign Out</button>
+    </div>
+  </div>
+</div>
+
+<div class="admin-container">
+  <aside class="admin-sidebar">
+    <nav class="admin-nav">
+      <div class="admin-nav-section">
+        <h3>Dashboard</h3>
+        <ul>
+          <li><a href="#overview" class="nav-link active" data-tab="overview">📊 Overview</a></li>
+          <li><a href="#inquiries" class="nav-link" data-tab="inquiries">📧 Inquiries</a></li>
+        </ul>
+      </div>
+      <div class="admin-nav-section">
+        <h3>Settings</h3>
+        <ul>
+          <li><a href="#change-password" class="nav-link" data-tab="change-password">🔐 Change Password</a></li>
+        </ul>
+      </div>
+    </nav>
+  </aside>
+
+  <main class="admin-content">
+    <!-- Overview Tab -->
+    <section id="overview" class="tab-content active">
+      <div class="tab-header">
+        <h2>Dashboard Overview</h2>
+        <p>Welcome back! Here's a summary of your inquiries.</p>
+      </div>
+      
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">📨</div>
+          <div class="stat-info">
+            <div class="stat-label">Total Inquiries</div>
+            <div id="totalCount" class="stat-value">0</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⏳</div>
+          <div class="stat-info">
+            <div class="stat-label">Pending</div>
+            <div id="pendingCount" class="stat-value">0</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">✅</div>
+          <div class="stat-info">
+            <div class="stat-label">Reviewed</div>
+            <div id="reviewedCount" class="stat-value">0</div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon">⚠️</div>
+          <div class="stat-info">
+            <div class="stat-label">Spam</div>
+            <div id="spamCount" class="stat-value">0</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="recent-inquiries">
+        <h3>Recent Inquiries</h3>
+        <div id="recentList" class="inquiry-list">
+          <p class="loading-msg">Loading inquiries...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inquiries Tab -->
+    <section id="inquiries" class="tab-content">
+      <div class="tab-header">
+        <h2>All Inquiries</h2>
+        <p>Manage all contact inquiries and enrollment requests.</p>
+      </div>
+
+      <div class="inquiries-controls">
+        <button id="filterPending" class="filter-btn active" data-filter="">All Inquiries</button>
+        <button id="filterReviewed" class="filter-btn" data-filter="reviewed">Reviewed</button>
+        <button id="filterPending2" class="filter-btn" data-filter="pending">Pending</button>
+        <button id="filterSpam" class="filter-btn" data-filter="spam">Spam</button>
+      </div>
+
+      <div id="inquiriesList" class="inquiry-list">
+        <p class="loading-msg">Loading inquiries...</p>
+      </div>
+    </section>
+
+    <!-- Change Password Tab -->
+    <section id="change-password" class="tab-content">
+      <div class="tab-header">
+        <h2>Change Password</h2>
+        <p>Update your admin account password.</p>
+      </div>
+
+      <form id="changePasswordForm" class="settings-form">
+        <div class="form-group">
+          <label for="oldPassword">Current Password</label>
+          <input 
+            type="password" 
+            id="oldPassword" 
+            placeholder="Enter your current password"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="newPassword">New Password</label>
+          <input 
+            type="password" 
+            id="newPassword" 
+            placeholder="Enter new password (min. 6 characters)"
+            required
+            minlength="6"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Confirm New Password</label>
+          <input 
+            type="password" 
+            id="confirmPassword" 
+            placeholder="Confirm new password"
+            required
+            minlength="6"
+          />
+        </div>
+
+        <button type="submit" class="settings-btn">Update Password</button>
+        <div id="pwdMsg" class="settings-msg"></div>
+      </form>
+    </section>
+  </main>
+</div>
+
+<!-- Inquiry Details Modal -->
+<div id="inquiryModal" class="modal">
+  <div class="modal-content">
+    <button class="modal-close">&times;</button>
+    <div id="inquiryDetails" class="inquiry-details">
+      <!-- Populated dynamically -->
+    </div>
+  </div>
+</div>
+
+<script src="api.js"></script>
+<script src="admin-dashboard.js"></script>
+
+</body>
+</html>

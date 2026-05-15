@@ -247,22 +247,6 @@
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   var b=document.getElementById('burger'),n=document.getElementById('navList');
   if(b){b.addEventListener('click',function(){n.classList.toggle('open');b.classList.toggle('is-open')})}
-  
-  document.getElementById('contactForm').addEventListener('submit',function(e){
-    e.preventDefault();
-    var ok=document.getElementById('okMsg'),er=document.getElementById('errMsg');
-    ok.style.display=er.style.display='none';
-    var fn=document.getElementById('fname').value.trim();
-    var ln=document.getElementById('lname').value.trim();
-    var em=document.getElementById('femail').value.trim();
-    var msg=document.getElementById('msg').value.trim();
-    if(fn&&ln&&em&&msg){
-      ok.style.display='block';
-      document.getElementById('contactForm').reset();
-    }else{
-      er.style.display='block';
-    }
-  });
 </script>
 <!-- Add this script at the end of contact.html -->
 <script src="api.js"></script>
@@ -271,33 +255,53 @@
     e.preventDefault();
     
     const formData = {
-      name: document.getElementById('name').value,
-      email: document.getElementById('email').value,
-      subject: document.getElementById('subject').value,
-      message: document.getElementById('message').value
+      firstName: document.getElementById('fname').value.trim(),
+      lastName: document.getElementById('lname').value.trim(),
+      email: document.getElementById('femail').value.trim(),
+      phone: document.getElementById('phone').value.trim(),
+      enquiryType: document.querySelector('input[name="enquiry"]:checked')?.value || 'general',
+      program: document.getElementById('program').value,
+      message: document.getElementById('msg').value.trim()
     };
+
+    const okMsg = document.getElementById('okMsg');
+    const errMsg = document.getElementById('errMsg');
+
+    // Hide previous messages
+    okMsg.style.display = 'none';
+    errMsg.style.display = 'none';
+
+    // Basic validation
+    if (!formData.firstName || !formData.lastName || !formData.email || !formData.message) {
+      errMsg.style.display = 'block';
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      errMsg.textContent = '❌ Please enter a valid email address.';
+      errMsg.style.display = 'block';
+      return;
+    }
 
     try {
       const result = await submitContact(formData);
-      alert('Message sent successfully!');
-      this.reset();
+      
+      if (result.success) {
+        okMsg.style.display = 'block';
+        this.reset();
+      } else {
+        errMsg.textContent = `❌ ${result.message || 'Failed to send message. Please try again.'}`;
+        errMsg.style.display = 'block';
+      }
     } catch (error) {
-      alert('Error: ' + error.message);
+      console.error('Contact form error:', error);
+      errMsg.textContent = `❌ ${error.message || 'Failed to send message. Please try again.'}`;
+      errMsg.style.display = 'block';
     }
   });
 </script>
-<script>
-  const contactForm = document.getElementById('contactForm'); // Ensure your form has this ID
-  if (contactForm) {
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
-      
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value
-      };
 
       try {
         const response = await fetch('http://localhost:5000/api/contact', {
