@@ -295,25 +295,365 @@
 }
 
 /* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
+  .enrollment-intro {
+    padding: 36px 24px;
+  }
+
+  .enrollment-intro h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .enrollment-intro p {
+    font-size: 15px;
+    margin-bottom: 18px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .intro-card {
+    padding: 20px 16px;
+  }
+
+  .intro-card h3 {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+
+  .intro-card p {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
   .enrollment-form-wrapper {
-    padding: 24px;
+    padding: 32px 24px;
+  }
+
+  .enrollment-form-wrapper h2 {
+    font-size: 22px;
+    margin-bottom: 24px;
+  }
+
+  .form-section {
+    margin-bottom: 24px;
+  }
+
+  .form-section h3 {
+    font-size: 15px;
+    margin-bottom: 14px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .field {
+    margin-bottom: 14px;
+  }
+
+  .field label {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .field input,
+  .field textarea,
+  .field select {
+    font-size: 13px;
+    padding: 10px 12px;
+  }
+
+  .form-actions {
+    gap: 10px;
+  }
+
+  .form-submit,
+  .btn-secondary {
+    font-size: 13px;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .enrollment-intro {
+    padding: 28px 20px;
+  }
+
+  .enrollment-intro h1 {
+    font-size: 24px;
+    margin-bottom: 16px;
+  }
+
+  .enrollment-intro p {
+    font-size: 14px;
+    margin-bottom: 16px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .intro-card {
+    padding: 18px 14px;
+  }
+
+  .intro-card h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .intro-card p {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .enrollment-form-wrapper {
+    padding: 24px 18px;
+  }
+
+  .enrollment-form-wrapper h2 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+
+  .form-section {
+    margin-bottom: 20px;
+  }
+
+  .form-section h3 {
+    font-size: 14px;
+    margin-bottom: 12px;
   }
 
   .form-row {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .field {
+    margin-bottom: 12px;
+  }
+
+  .field label {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .field input,
+  .field textarea,
+  .field select {
+    font-size: 12px;
+    padding: 9px 10px;
   }
 
   .form-actions {
     flex-direction: column;
+    gap: 8px;
   }
 
   .form-submit,
   .btn-secondary {
     width: 100%;
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+
+  .radio-label input[type="radio"],
+  .checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .radio-label span,
+  .checkbox-label span {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .enrollment-intro {
+    padding: 22px 16px;
+  }
+
+  .enrollment-intro h1 {
+    font-size: 20px;
+    margin-bottom: 14px;
+  }
+
+  .enrollment-intro p {
+    font-size: 13px;
+    margin-bottom: 14px;
   }
 
   .intro-grid {
     grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .intro-card {
+    padding: 16px 12px;
+  }
+
+  .intro-card h3 {
+    font-size: 14px;
+    margin-bottom: 8px;
+  }
+
+  .intro-card p {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .enrollment-form-wrapper {
+    padding: 20px 14px;
+  }
+
+  .enrollment-form-wrapper h2 {
+    font-size: 18px;
+    margin-bottom: 16px;
+  }
+
+  .form-section {
+    margin-bottom: 16px;
+  }
+
+  .form-section h3 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .field {
+    margin-bottom: 10px;
+  }
+
+  .field label {
+    font-size: 11px;
+    margin-bottom: 4px;
+  }
+
+  .field input,
+  .field textarea,
+  .field select {
+    font-size: 11px;
+    padding: 8px 8px;
+  }
+
+  .form-msg {
+    font-size: 12px;
+    padding: 12px;
+  }
+
+  .form-submit,
+  .btn-secondary {
+    font-size: 11px;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .enrollment-intro {
+    padding: 18px 12px;
+  }
+
+  .enrollment-intro h1 {
+    font-size: 18px;
+    margin-bottom: 12px;
+  }
+
+  .enrollment-intro p {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .intro-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .intro-card {
+    padding: 14px 10px;
+  }
+
+  .intro-card h3 {
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .intro-card p {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .enrollment-form-wrapper {
+    padding: 16px 10px;
+  }
+
+  .enrollment-form-wrapper h2 {
+    font-size: 16px;
+    margin-bottom: 14px;
+  }
+
+  .form-section {
+    margin-bottom: 14px;
+  }
+
+  .form-section h3 {
+    font-size: 12px;
+    margin-bottom: 8px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .field {
+    margin-bottom: 8px;
+  }
+
+  .field label {
+    font-size: 10px;
+    margin-bottom: 4px;
+  }
+
+  .field input,
+  .field textarea,
+  .field select {
+    font-size: 10px;
+    padding: 7px 6px;
+  }
+
+  .form-actions {
+    gap: 6px;
+  }
+
+  .form-msg {
+    font-size: 11px;
+    padding: 10px;
+    margin-top: 14px;
+  }
+
+  .form-submit,
+  .btn-secondary {
+    font-size: 10px;
+    padding: 7px 10px;
+  }
+
+  .radio-label input[type="radio"],
+  .checkbox-label input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    margin-top: 1px;
   }
 }

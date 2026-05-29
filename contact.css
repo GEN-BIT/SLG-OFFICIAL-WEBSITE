@@ -56,8 +56,118 @@
 .required-marker{color:#DC2626}
 .sb-office-hours{padding:14px}
 
-@media(max-width:760px){.contact-cards{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.contact-cards{grid-template-columns:1fr}.form-row{grid-template-columns:1fr}}
+/* Page hero responsive */
+@media(max-width:768px){
+  .page-hero{padding:32px 0}
+  .page-hero h2{font-size:28px;margin-bottom:6px}
+  .page-hero .ph-sub{font-size:14px}
+  .ph-breadcrumb{font-size:11px;margin-bottom:8px}
+}
+@media(max-width:640px){
+  .page-hero{padding:24px 0}
+  .page-hero h2{font-size:22px}
+  .page-hero .ph-sub{font-size:13px}
+  .ph-breadcrumb{font-size:10px}
+}
+@media(max-width:480px){
+  .page-hero{padding:20px 0}
+  .page-hero h2{font-size:18px}
+  .page-hero .ph-sub{font-size:12px}
+}
+
+/* Contact cards responsive */
+@media(max-width:960px){
+  .contact-cards{grid-template-columns:1fr 1fr 1fr;gap:14px;margin-bottom:24px}
+}
+@media(max-width:768px){
+  .contact-cards{grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px}
+  .cc{padding:18px 14px}
+  .cc-icon{font-size:24px;margin-bottom:8px}
+  .cc h3{font-size:14px;margin-bottom:6px}
+  .cc p, .cc a{font-size:13px}
+}
+@media(max-width:640px){
+  .contact-cards{grid-template-columns:1fr}
+  .cc{padding:16px 14px}
+  .cc-icon{font-size:22px}
+}
+@media(max-width:480px){
+  .contact-cards{gap:10px;margin-bottom:16px}
+  .cc{padding:14px 12px;border-top-width:3px}
+  .cc h3{font-size:13px;margin-bottom:4px}
+  .cc p, .cc a{font-size:12px;line-height:1.6}
+}
+
+/* Map placeholder responsive */
+@media(max-width:768px){
+  .map-placeholder{height:180px;gap:6px;margin-bottom:24px}
+  .map-placeholder span:first-child{font-size:32px}
+  .map-placeholder strong{font-size:14px}
+}
+@media(max-width:480px){
+  .map-placeholder{height:150px;margin-bottom:20px}
+  .map-placeholder span:first-child{font-size:28px}
+  .map-placeholder strong{font-size:12px}
+  .map-placeholder small{font-size:10px}
+}
+
+/* Contact form responsive */
+@media(max-width:900px){
+  .contact-form-wrap{padding:24px}
+  .form-title{font-size:20px}
+  .form-row{gap:14px;margin-bottom:14px}
+  .field{margin-bottom:14px}
+}
+@media(max-width:768px){
+  .contact-form-wrap{padding:20px;margin-bottom:24px}
+  .form-title{font-size:18px;margin-bottom:4px}
+  .form-subtitle{font-size:13px;margin-bottom:20px;padding-bottom:12px}
+  .field label{font-size:13px;margin-bottom:5px}
+  .field input, .field select, .field textarea{padding:10px 12px;font-size:14px}
+  .form-row{margin-bottom:12px}
+  .radio-group{gap:8px;margin-top:5px}
+  .radio-label{padding:8px 14px;font-size:13px}
+}
+@media(max-width:640px){
+  .contact-form-wrap{padding:18px}
+  .form-row{grid-template-columns:1fr;gap:12px}
+  .form-title{font-size:17px}
+  .form-submit{padding:11px 28px;font-size:15px;margin-top:4px}
+}
+@media(max-width:480px){
+  .contact-form-wrap{padding:14px;margin-bottom:18px}
+  .form-title{font-size:15px}
+  .form-subtitle{font-size:12px;margin-bottom:16px;padding-bottom:10px}
+  .field label{font-size:12px}
+  .field input, .field select, .field textarea{padding:9px 10px;font-size:13px}
+  .field textarea{min-height:100px}
+  .radio-group{gap:6px}
+  .radio-label{padding:7px 12px;font-size:12px}
+  .form-submit{padding:10px 20px;font-size:13px}
+  .form-msg{font-size:13px;padding:10px 14px}
+}
+
+/* Hours table responsive */
+@media(max-width:768px){
+  .hours-table{font-size:14px}
+  .hours-table td{padding:8px 6px}
+}
+@media(max-width:480px){
+  .hours-table{font-size:12px}
+  .hours-table td{padding:6px 4px}
+}
+
+/* Admission box responsive */
+@media(max-width:768px){
+  .admission-box{padding:18px}
+  .admission-box h4{font-size:16px;margin-bottom:12px}
+  .intake-note{padding:10px 14px;font-size:13px;margin-top:12px}
+}
+@media(max-width:480px){
+  .admission-box{padding:14px}
+  .admission-box h4{font-size:14px;margin-bottom:10px}
+  .intake-note{padding:8px 12px;font-size:12px;margin-top:10px}
+}
 
 /* ── CONTACT PAGE THEME OVERRIDES ───────────────────────── */
 [data-theme="dark"] .cc { background: #1A1E2E; border-color: #2C3248; border-top-color: #2A4070; }

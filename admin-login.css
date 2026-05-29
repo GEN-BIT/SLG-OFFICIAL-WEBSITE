@@ -283,14 +283,278 @@
 }
 
 /* Responsive */
-@media (max-width: 640px) {
+@media (max-width: 1024px) {
+  .login-container {
+    padding: 36px 20px;
+  }
+
   .login-box {
-    padding: 32px 20px;
+    padding: 40px 28px;
+    max-width: 380px;
+  }
+
+  .login-header {
+    margin-bottom: 28px;
+  }
+
+  .logo-crest {
+    width: 72px;
+    height: 72px;
+    font-size: 26px;
+  }
+
+  .login-logo h1 {
+    font-size: 22px;
+  }
+
+  .login-logo p {
+    font-size: 13px;
+  }
+
+  .login-form {
+    gap: 18px;
+    margin-bottom: 20px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input {
+    padding: 11px 12px;
+    font-size: 15px;
+  }
+
+  .login-btn {
+    padding: 12px 18px;
+    font-size: 15px;
   }
 
   .admin-creds-box {
-    margin: 30px 20px;
+    padding: 24px;
+    margin: 36px auto;
+    max-width: 460px;
+  }
+
+  .admin-creds-box h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .creds-display {
+    padding: 14px;
+    margin-bottom: 14px;
+  }
+
+  .cred-item {
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .cred-label {
+    min-width: 70px;
+    font-size: 12px;
+  }
+
+  .cred-item code {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 920px) {
+  .login-container {
+    padding: 32px 18px;
+  }
+
+  .login-box {
+    padding: 36px 24px;
+    max-width: 360px;
+  }
+
+  .login-header {
+    margin-bottom: 24px;
+  }
+
+  .logo-crest {
+    width: 68px;
+    height: 68px;
+    font-size: 24px;
+  }
+
+  .login-logo h1 {
+    font-size: 20px;
+  }
+
+  .login-logo p {
+    font-size: 12px;
+  }
+
+  .login-form {
+    gap: 16px;
+    margin-bottom: 18px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+  }
+
+  .form-group input {
+    padding: 10px 11px;
+    font-size: 14px;
+  }
+
+  .login-btn {
+    padding: 11px 16px;
+    font-size: 14px;
+  }
+
+  .admin-creds-box {
+    padding: 22px;
+    margin: 32px auto;
+    max-width: 440px;
+  }
+
+  .admin-creds-box h3 {
+    font-size: 15px;
+    margin-bottom: 10px;
+  }
+
+  .creds-display {
+    padding: 13px;
+    margin-bottom: 13px;
+  }
+
+  .cred-item {
+    gap: 9px;
+    margin-bottom: 9px;
+  }
+
+  .cred-label {
+    min-width: 65px;
+    font-size: 11px;
+  }
+
+  .cred-item code {
+    padding: 4px 7px;
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    padding: 28px 16px;
+  }
+
+  .login-box {
+    padding: 32px 22px;
+    max-width: 340px;
+  }
+
+  .login-header {
+    margin-bottom: 22px;
+  }
+
+  .logo-crest {
+    width: 64px;
+    height: 64px;
+    font-size: 22px;
+  }
+
+  .login-logo h1 {
+    font-size: 19px;
+  }
+
+  .login-logo p {
+    font-size: 12px;
+  }
+
+  .login-form {
+    gap: 15px;
+    margin-bottom: 16px;
+  }
+
+  .form-group label {
+    font-size: 12px;
+  }
+
+  .form-group input {
+    padding: 10px 10px;
+    font-size: 14px;
+  }
+
+  .login-btn {
+    padding: 10px 15px;
+    font-size: 13px;
+  }
+
+  .error-msg,
+  .success-msg {
+    font-size: 13px;
+    padding: 10px;
+  }
+
+  .login-footer {
+    padding-top: 16px;
+  }
+
+  .login-footer p {
+    font-size: 12px;
+    margin: 0 0 10px 0;
+  }
+
+  .admin-creds-box {
     padding: 20px;
+    margin: 28px 20px;
+    max-width: none;
+  }
+
+  .admin-creds-box h3 {
+    font-size: 14px;
+    margin-bottom: 9px;
+  }
+
+  .admin-creds-box > p {
+    font-size: 13px;
+  }
+
+  .creds-display {
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+
+  .cred-item {
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+
+  .cred-label {
+    min-width: 60px;
+    font-size: 11px;
+  }
+
+  .cred-item code {
+    padding: 4px 6px;
+    font-size: 10px;
+  }
+
+  .creds-warning {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .login-container {
+    padding: 24px 14px;
+  }
+
+  .login-box {
+    padding: 28px 20px;
+    max-width: 320px;
+  }
+
+  .login-header {
+    margin-bottom: 20px;
   }
 
   .logo-crest {
@@ -300,6 +564,234 @@
   }
 
   .login-logo h1 {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .login-logo p {
+    font-size: 11px;
+  }
+
+  .login-form {
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+
+  .form-group {
+    gap: 6px;
+  }
+
+  .form-group label {
+    font-size: 11px;
+  }
+
+  .form-group input {
+    padding: 9px 9px;
+    font-size: 13px;
+  }
+
+  .login-btn {
+    padding: 10px 14px;
+    font-size: 12px;
+  }
+
+  .error-msg,
+  .success-msg {
+    font-size: 12px;
+    padding: 9px;
+  }
+
+  .login-footer {
+    padding-top: 14px;
+    border-top: none;
+  }
+
+  .login-footer p {
+    font-size: 11px;
+    margin: 0 0 8px 0;
+  }
+
+  .connection-status {
+    gap: 6px;
+  }
+
+  .status-dot {
+    width: 7px;
+    height: 7px;
+  }
+
+  .admin-creds-box {
+    margin: 24px 14px;
+    padding: 18px;
+  }
+
+  .admin-creds-box h3 {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+
+  .admin-creds-box > p {
+    font-size: 12px;
+    margin: 0 0 14px 0;
+  }
+
+  .creds-display {
+    padding: 11px;
+    margin-bottom: 11px;
+  }
+
+  .cred-item {
+    gap: 7px;
+    margin-bottom: 7px;
+  }
+
+  .cred-label {
+    min-width: 55px;
+    font-size: 10px;
+  }
+
+  .cred-item code {
+    padding: 3px 5px;
+    font-size: 9px;
+  }
+
+  .creds-warning {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px 12px;
+    min-height: 100vh;
+  }
+
+  .login-box {
+    padding: 24px 16px;
+    max-width: 100%;
+  }
+
+  .login-header {
+    margin-bottom: 16px;
+  }
+
+  .logo-crest {
+    width: 52px;
+    height: 52px;
+    font-size: 18px;
+    border-width: 2px;
+  }
+
+  .login-logo h1 {
+    font-size: 16px;
+    margin-bottom: 4px;
+  }
+
+  .login-logo p {
+    font-size: 10px;
+    letter-spacing: 0.3px;
+  }
+
+  .login-form {
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+
+  .form-group {
+    gap: 5px;
+  }
+
+  .form-group label {
+    font-size: 10px;
+    font-weight: 600;
+  }
+
+  .form-group input {
+    padding: 8px 8px;
+    font-size: 12px;
+    border-width: 1px;
+  }
+
+  .form-group input::placeholder {
+    font-size: 11px;
+  }
+
+  .login-btn {
+    padding: 9px 12px;
+    font-size: 11px;
+    letter-spacing: 0.3px;
+  }
+
+  .error-msg,
+  .success-msg {
+    font-size: 11px;
+    padding: 8px;
+    margin-top: 10px;
+  }
+
+  .login-footer {
+    padding-top: 12px;
+    border-top: none;
+    margin-top: 12px;
+  }
+
+  .login-footer p {
+    font-size: 10px;
+    margin: 0 0 6px 0;
+  }
+
+  .connection-status {
+    gap: 4px;
+    font-size: 10px;
+  }
+
+  .status-dot {
+    width: 6px;
+    height: 6px;
+  }
+
+  .admin-creds-box {
+    margin: 20px 12px;
+    padding: 16px;
+    border-radius: var(--radius);
+  }
+
+  .admin-creds-box h3 {
+    font-size: 12px;
+    margin-bottom: 8px;
+    margin-top: 0;
+  }
+
+  .admin-creds-box > p {
+    font-size: 11px;
+    margin: 0 0 12px 0;
+  }
+
+  .creds-display {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-left-width: 2px;
+  }
+
+  .cred-item {
+    gap: 6px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+  }
+
+  .cred-label {
+    min-width: 50px;
+    font-size: 9px;
+  }
+
+  .cred-item code {
+    padding: 3px 4px;
+    font-size: 8px;
+    flex: 1;
+    min-width: 100px;
+  }
+
+  .creds-warning {
+    font-size: 10px;
+    margin: 0;
   }
 }

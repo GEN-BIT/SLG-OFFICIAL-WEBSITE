@@ -194,14 +194,78 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
+  .page-hero {
+    padding: 40px 0;
+  }
+
+  .page-hero h2 {
+    font-size: 30px;
+  }
+
+  .page-hero .ph-sub {
+    font-size: 14px;
+  }
+
+  .alumni-stats {
+    gap: 10px;
+    margin-bottom: 36px;
+  }
+
+  .alumni-stat {
+    padding: 24px 14px;
+  }
+
+  .stat-number {
+    font-size: 28px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  .stories-grid {
+    gap: 20px;
+  }
+
+  .story-avatar {
+    width: 90px;
+    height: 90px;
+    font-size: 56px;
+  }
+
+  .story-content h3 {
+    font-size: 17px;
+  }
+
+  .story-text {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 920px) {
+  .page-hero {
+    padding: 36px 0;
+  }
+
+  .page-hero h2 {
+    font-size: 28px;
+  }
+
+  .page-hero .ph-sub {
+    font-size: 13px;
+  }
+
   .alumni-stats {
     grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    margin-bottom: 32px;
   }
 
   .alumni-stat {
     border-right: none;
     border-bottom: 1px solid var(--border);
+    padding: 22px 14px;
   }
 
   .alumni-stat:nth-child(2),
@@ -214,40 +278,321 @@
     border-bottom: none;
   }
 
-  .stories-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 700px) {
-  .alumni-stats {
-    grid-template-columns: 1fr 1fr;
-  }
-
   .stat-number {
-    font-size: 24px;
+    font-size: 26px;
   }
 
   .stat-label {
     font-size: 11px;
   }
 
-  .page-hero h2 {
-    font-size: 26px;
+  .stories-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
   }
 
   .story-avatar {
-    font-size: 48px;
-    width: 80px;
-    height: 80px;
+    width: 88px;
+    height: 88px;
+    font-size: 54px;
   }
 
   .story-content {
-    padding: 18px;
+    padding: 22px;
+    gap: 10px;
   }
 
   .story-content h3 {
     font-size: 16px;
+  }
+
+  .story-role {
+    font-size: 12px;
+  }
+
+  .story-text {
+    font-size: 13px;
+  }
+
+  .story-meta {
+    font-size: 11px;
+    gap: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 32px 0;
+  }
+
+  .page-hero .ph-kicker {
+    font-size: 10px;
+  }
+
+  .page-hero h2 {
+    font-size: 26px;
+    margin-bottom: 6px;
+  }
+
+  .page-hero .ph-sub {
+    font-size: 12px;
+  }
+
+  .ph-breadcrumb {
+    font-size: 11px;
+  }
+
+  .alumni-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    margin-bottom: 28px;
+    border-radius: var(--radius);
+  }
+
+  .alumni-stat {
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding: 20px 12px;
+  }
+
+  .alumni-stat:nth-child(3),
+  .alumni-stat:nth-child(4) {
+    border-bottom: none;
+  }
+
+  .stat-number {
+    font-size: 24px;
+    margin-bottom: 3px;
+  }
+
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .stories-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .alumni-story {
+    border-radius: var(--radius);
+  }
+
+  .story-image {
+    padding: 28px 14px;
+    gap: 10px;
+  }
+
+  .story-avatar {
+    width: 80px;
+    height: 80px;
+    font-size: 48px;
+  }
+
+  .story-program {
+    padding: 5px 12px;
+    font-size: 10px;
+  }
+
+  .story-content {
+    padding: 20px;
+    gap: 10px;
+  }
+
+  .story-content h3 {
+    font-size: 15px;
+  }
+
+  .story-role {
+    font-size: 12px;
+  }
+
+  .story-text {
+    font-size: 12px;
+    line-height: 1.6;
+  }
+
+  .story-meta {
+    font-size: 10px;
+    gap: 4px;
+    padding-top: 10px;
+  }
+}
+
+@media (max-width: 640px) {
+  .page-hero {
+    padding: 28px 0;
+  }
+
+  .page-hero .ph-kicker {
+    font-size: 9px;
+    margin-bottom: 8px;
+  }
+
+  .page-hero h2 {
+    font-size: 22px;
+  }
+
+  .page-hero .ph-sub {
+    font-size: 11px;
+  }
+
+  .ph-breadcrumb {
+    font-size: 10px;
+    margin-bottom: 8px;
+  }
+
+  .alumni-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    margin-bottom: 24px;
+  }
+
+  .alumni-stat {
+    padding: 16px 10px;
+  }
+
+  .stat-number {
+    font-size: 20px;
+  }
+
+  .stat-label {
+    font-size: 9px;
+  }
+
+  .stories-grid {
+    gap: 14px;
+  }
+
+  .story-avatar {
+    width: 72px;
+    height: 72px;
+    font-size: 42px;
+  }
+
+  .story-program {
+    padding: 4px 10px;
+    font-size: 9px;
+  }
+
+  .story-content {
+    padding: 16px;
+  }
+
+  .story-content h3 {
+    font-size: 14px;
+  }
+
+  .story-role {
+    font-size: 11px;
+  }
+
+  .story-text {
+    font-size: 11px;
+  }
+
+  .story-meta {
+    font-size: 9px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding: 24px 0;
+  }
+
+  .page-hero .ph-kicker {
+    font-size: 8px;
+    margin-bottom: 6px;
+  }
+
+  .page-hero h2 {
+    font-size: 20px;
+    margin-bottom: 4px;
+  }
+
+  .page-hero .ph-sub {
+    font-size: 10px;
+  }
+
+  .ph-breadcrumb {
+    font-size: 9px;
+    margin-bottom: 6px;
+  }
+
+  .alumni-stats {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+    margin-bottom: 20px;
+  }
+
+  .alumni-stat {
+    padding: 14px 8px;
+  }
+
+  .stat-number {
+    font-size: 18px;
+    margin-bottom: 2px;
+  }
+
+  .stat-label {
+    font-size: 8px;
+  }
+
+  .stories-grid {
+    gap: 12px;
+  }
+
+  .alumni-story {
+    border-radius: var(--radius);
+  }
+
+  .story-image {
+    padding: 22px 12px;
+    gap: 8px;
+  }
+
+  .story-avatar {
+    width: 64px;
+    height: 64px;
+    font-size: 38px;
+  }
+
+  .story-image::after {
+    width: 80px;
+    height: 80px;
+    top: -25px;
+    right: -25px;
+  }
+
+  .story-program {
+    padding: 3px 8px;
+    font-size: 8px;
+  }
+
+  .story-content {
+    padding: 14px;
+    gap: 8px;
+  }
+
+  .story-content h3 {
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+
+  .story-role {
+    font-size: 10px;
+  }
+
+  .story-text {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+
+  .story-meta {
+    font-size: 8px;
+    gap: 2px;
+    padding-top: 8px;
   }
 }
 

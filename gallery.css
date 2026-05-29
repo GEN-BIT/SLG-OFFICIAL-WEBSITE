@@ -94,8 +94,128 @@
 .gs-n{display:block;font-family:'Playfair Display',serif;font-size:28px;font-weight:800;color:var(--navy);line-height:1}
 .gs-l{font-size:12px;color:var(--text-soft);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:5px;display:block}
 
-@media(max-width:800px){.gal-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:480px){.gal-grid{grid-template-columns:1fr}.dsh-meta{flex-direction:column;align-items:flex-start;gap:10px}.gal-stats{grid-template-columns:1fr 1fr}}
+/* Page hero responsive */
+@media(max-width:768px){
+  .page-hero{padding:32px 0}
+  .page-hero h2{font-size:28px;margin-bottom:6px}
+  .page-hero .ph-sub{font-size:14px}
+}
+@media(max-width:640px){
+  .page-hero{padding:24px 0}
+  .page-hero h2{font-size:22px}
+  .page-hero .ph-sub{font-size:13px}
+}
+@media(max-width:480px){
+  .page-hero{padding:20px 0}
+  .page-hero h2{font-size:18px}
+  .page-hero .ph-sub{font-size:12px}
+}
+
+/* Filter bar responsive */
+@media(max-width:900px){
+  .filter-bar{padding:12px 16px;gap:8px;margin-bottom:24px}
+  .filter-bar strong{font-size:12px}
+  .f-btn{padding:7px 16px;font-size:12px}
+}
+@media(max-width:768px){
+  .filter-bar{padding:10px 14px;gap:6px;margin-bottom:20px}
+  .f-btn{padding:6px 14px;font-size:11px}
+}
+@media(max-width:640px){
+  .filter-bar{padding:10px 12px}
+  .f-btn{padding:6px 12px;font-size:10px}
+}
+
+/* Department section responsive */
+@media(max-width:900px){
+  .dept-section{margin-bottom:36px}
+  .dept-section-header{padding:14px 16px;margin-bottom:14px}
+  .dsh-meta{gap:12px}
+  .dsh-code{font-size:14px;padding:8px 14px}
+  .dept-section-header h3{font-size:16px}
+  .dept-section-header p{font-size:12px}
+}
+@media(max-width:768px){
+  .dept-section{margin-bottom:32px}
+  .dept-section-header{padding:12px 14px;margin-bottom:12px}
+  .dsh-meta{gap:10px;flex-direction:column;align-items:flex-start}
+  .dsh-code{font-size:13px;padding:7px 12px}
+  .dept-section-header h3{font-size:15px;margin-bottom:3px}
+  .dept-section-header p{font-size:11px;line-height:1.5}
+}
+
+/* Gallery grid responsive */
+@media(max-width:960px){
+  .gal-grid{grid-template-columns:repeat(3,1fr);gap:16px}
+}
+@media(max-width:800px){
+  .gal-grid{grid-template-columns:1fr 1fr;gap:14px}
+}
+@media(max-width:640px){
+  .gal-grid{grid-template-columns:1fr;gap:12px}
+}
+
+/* Gallery card responsive */
+@media(max-width:900px){
+  .gal-img-wrap{height:170px}
+  .gal-info{padding:12px 14px 14px}
+  .gal-info h4{font-size:14px;margin-bottom:4px}
+  .gal-info p{font-size:12px}
+  .dept-chip{font-size:9px;padding:2px 8px;margin-bottom:6px}
+  .gal-dept-ribbon{font-size:9px;padding:3px 9px;top:8px;left:8px}
+}
+@media(max-width:768px){
+  .gal-img-wrap{height:150px}
+  .gal-info{padding:10px 12px 12px}
+  .gal-info h4{font-size:13px;margin-bottom:4px}
+  .gal-info p{font-size:11px;line-height:1.5}
+}
+@media(max-width:480px){
+  .gal-img-wrap{height:120px}
+  .gal-info{padding:8px 10px 10px}
+  .gal-info h4{font-size:12px;margin-bottom:3px}
+  .gal-info p{font-size:10px;line-height:1.4}
+  .gal-dept-ribbon{font-size:8px;padding:2px 7px;top:6px;left:6px}
+}
+
+/* Featured table responsive */
+@media(max-width:900px){
+  .featured-table{font-size:13px}
+  .featured-table thead th{padding:10px 14px;font-size:12px}
+  .featured-table tbody td{padding:11px 14px}
+  .ft-dept{font-size:10px;padding:2px 8px}
+}
+@media(max-width:768px){
+  .featured-table{font-size:12px}
+  .featured-table thead th{padding:9px 12px;font-size:11px}
+  .featured-table tbody td{padding:10px 12px}
+  .ft-dept{font-size:9px;padding:1px 6px}
+}
+@media(max-width:640px){
+  .featured-table{font-size:11px;overflow-x:auto}
+  .featured-table thead th{padding:8px 10px;font-size:10px}
+  .featured-table tbody td{padding:8px 10px}
+}
+
+/* Gallery stats responsive */
+@media(max-width:900px){
+  .gal-stats{grid-template-columns:repeat(4,1fr);gap:1px;margin-bottom:28px}
+  .gs-cell{padding:16px 6px}
+  .gs-n{font-size:24px}
+  .gs-l{font-size:11px;margin-top:4px}
+}
+@media(max-width:768px){
+  .gal-stats{margin-bottom:24px}
+  .gs-cell{padding:14px 6px}
+  .gs-n{font-size:22px}
+  .gs-l{font-size:10px}
+}
+@media(max-width:480px){
+  .gal-stats{grid-template-columns:1fr 1fr;gap:1px;margin-bottom:20px}
+  .gs-cell{padding:12px 6px}
+  .gs-n{font-size:18px}
+  .gs-l{font-size:9px;margin-top:3px}
+}
 
 /* ── DEPARTMENT COLORS & STYLES ─────────────────────── */
 /* SOD - Software Development */

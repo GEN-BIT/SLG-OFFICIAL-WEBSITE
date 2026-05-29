@@ -62,7 +62,118 @@
 .prog-enroll p{color:var(--white);font-size:15px;font-weight:700}
 .prog-enroll small{display:block;color:rgba(255,255,255,.6);font-size:12px;margin-top:2px;font-weight:400}
 
-@media(max-width:700px){.prog-layout{grid-template-columns:1fr}.tab-btn{font-size:13px;padding:9px 14px}}
+/* Page hero responsive */
+@media(max-width:768px){
+  .page-hero{padding:32px 0}
+  .page-hero h2{font-size:28px}
+  .page-hero .ph-sub{font-size:14px}
+}
+@media(max-width:640px){
+  .page-hero{padding:24px 0}
+  .page-hero h2{font-size:22px;margin-bottom:6px}
+  .page-hero .ph-sub{font-size:13px}
+}
+@media(max-width:480px){
+  .page-hero{padding:20px 0}
+  .page-hero h2{font-size:18px}
+  .page-hero .ph-sub{font-size:12px}
+}
+
+/* Tabs responsive */
+@media(max-width:900px){
+  .tab-btn{padding:10px 18px;font-size:13px}
+}
+@media(max-width:768px){
+  .tab-row{margin-bottom:24px;padding-bottom:0}
+  .tab-btn{padding:9px 16px;font-size:12px}
+}
+@media(max-width:640px){
+  .tab-row{flex-wrap:wrap;gap:3px;margin-bottom:20px}
+  .tab-btn{padding:8px 12px;font-size:11px;border-radius:4px 4px 0 0}
+}
+
+/* Program header responsive */
+@media(max-width:900px){
+  .prog-header{gap:16px;padding:20px}
+  .prog-header-icon{font-size:42px}
+  .prog-header h2{font-size:24px;margin-bottom:4px}
+  .prog-tagline{font-size:13px}
+}
+@media(max-width:768px){
+  .prog-header{gap:14px;padding:18px}
+  .prog-header-icon{font-size:36px}
+  .prog-header h2{font-size:20px}
+  .prog-tagline{font-size:12.5px;line-height:1.6}
+  .prog-dept-code{font-size:10px;padding:2px 10px}
+}
+@media(max-width:640px){
+  .prog-header{flex-direction:column;text-align:center;gap:10px;padding:16px}
+  .prog-header-icon{font-size:32px}
+  .prog-header h2{font-size:18px}
+  .prog-tagline{font-size:12px}
+}
+
+/* Program layout responsive */
+@media(max-width:900px){
+  .prog-layout{grid-template-columns:2fr 1.5fr;gap:18px;margin-bottom:18px}
+}
+@media(max-width:768px){
+  .prog-layout{grid-template-columns:1fr;gap:16px;margin-bottom:16px}
+}
+
+/* Curriculum responsive */
+@media(max-width:900px){
+  .cur-item{padding:11px 0;gap:10px}
+  .cur-bullet{width:24px;height:24px}
+  .cur-text strong{font-size:13px}
+  .cur-text span{font-size:12px}
+}
+@media(max-width:768px){
+  .cur-item{padding:10px 0;gap:8px}
+  .cur-bullet{width:22px;height:22px}
+  .cur-text strong{font-size:12px}
+}
+@media(max-width:480px){
+  .cur-item{padding:8px 0}
+  .cur-bullet{width:20px;height:20px}
+  .cur-text strong{font-size:11px}
+  .cur-text span{font-size:10px}
+}
+
+/* Program info box responsive */
+@media(max-width:900px){
+  .pib-row{padding:9px 14px;font-size:13px}
+  .pib-head{padding:9px 14px;font-size:12px}
+  .services-offered h4{font-size:12px;margin-bottom:8px}
+  .stag{padding:4px 11px;font-size:11px}
+}
+@media(max-width:768px){
+  .pib-row{padding:8px 12px;font-size:12px}
+  .services-offered{margin-top:12px}
+  .service-tags{gap:5px}
+}
+@media(max-width:480px){
+  .pib-row{padding:7px 10px;font-size:11px}
+  .pib-head{padding:7px 10px;font-size:11px}
+  .services-offered h4{font-size:11px;margin-bottom:6px}
+  .stag{padding:3px 9px;font-size:10px}
+}
+
+/* Program enroll responsive */
+@media(max-width:900px){
+  .prog-enroll{padding:18px 20px;gap:12px;margin-top:16px}
+  .prog-enroll p{font-size:14px}
+  .prog-enroll small{font-size:11px}
+}
+@media(max-width:768px){
+  .prog-enroll{flex-direction:column;text-align:center;padding:16px 18px;margin-top:14px}
+  .prog-enroll p{font-size:13px}
+}
+@media(max-width:480px){
+  .prog-enroll{padding:14px 16px;margin-top:12px}
+  .prog-enroll p{font-size:12px}
+  .prog-enroll small{font-size:10px;margin-top:1px}
+}
 
 
 [data-theme="dark"] .tab-btn { background: #141828; border-color: #2C3248; color: #93B4DC; }
