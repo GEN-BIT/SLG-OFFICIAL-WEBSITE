@@ -27,10 +27,20 @@ async function apiCall(endpoint, options = {}) {
       headers,
     });
 
-    const data = await response.json();
+    let data;
+    const responseText = await response.text();
+    try {
+      data = responseText ? JSON.parse(responseText) : null;
+    } catch (parseError) {
+      data = responseText;
+    }
 
     if (!response.ok) {
-      throw new Error(data.message || `HTTP ${response.status}: ${response.statusText}`);
+      const errorMessage =
+        data && typeof data === 'object' && data.message
+          ? data.message
+          : data || `HTTP ${response.status}: ${response.statusText}`;
+      throw new Error(errorMessage);
     }
 
     return data;
