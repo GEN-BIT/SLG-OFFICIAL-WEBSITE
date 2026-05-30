@@ -3,7 +3,7 @@
  * Handles all communication with the backend
  */
 
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'http://localhost:5001/api';
 
 /**
  * Generic fetch wrapper with error handling
@@ -44,15 +44,19 @@ async function apiCall(endpoint, options = {}) {
  * Contact Form Submission
  */
 async function submitContact(formData) {
+  const fullName = [formData.firstName, formData.lastName].filter(Boolean).join(' ').trim();
+  const subject = formData.program
+    ? `Program of Interest: ${formData.program}`
+    : `Enquiry Type: ${formData.enquiryType}`;
+
   return apiCall('/contact', {
     method: 'POST',
     body: JSON.stringify({
-      firstName: formData.firstName,
-      lastName: formData.lastName,
+      name: fullName,
       email: formData.email,
       phone: formData.phone,
-      enquiryType: formData.enquiryType,
-      program: formData.program,
+      type: formData.enquiryType,
+      subject,
       message: formData.message,
     }),
   });
