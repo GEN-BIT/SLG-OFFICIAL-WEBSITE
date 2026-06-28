@@ -118,6 +118,16 @@
       searchInput.value = '';
     });
 
+    // Toggle mobile menu when burger is clicked
+    const burger = document.getElementById('burger');
+    const navList = document.getElementById('navList');
+    if (burger && navList) {
+      burger.addEventListener('click', function () {
+        burger.classList.toggle('is-open');
+        navList.classList.toggle('open');
+      });
+    }
+
     // Close results on outside click
     document.addEventListener('click', (e) => {
       if (!searchContainer.contains(e.target)) {
