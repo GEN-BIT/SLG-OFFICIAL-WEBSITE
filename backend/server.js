@@ -3,7 +3,6 @@ require('dotenv').config();
 const path = require('path');
 const fs = require('fs');
 const express = require('express');
-const cors = require('cors');
 const helmet = require('helmet');
 
 const { authenticateJWT, requireAdmin } = require('./src/middleware/auth');
@@ -35,9 +34,6 @@ const app = express();
 
 // Security headers
 app.use(helmet());
-
-// JSON parsing
-app.use(express.json({ limit: '1mb' }));
 
 // CORS: allow the static frontend to call localhost backend
 app.use(
@@ -85,6 +81,8 @@ app.patch('/api/enrollments/:id/status', authenticateJWT, requireAdmin, updateEn
 app.delete('/api/enrollments/:id', authenticateJWT, requireAdmin, deleteEnrollment);
 
 const port = Number(process.env.PORT || 5001);
-app.listen(port, () => {
+app.listen(3000, "0.0.0.0", () => {
   console.log(`[slg-tss-backend] listening on http://localhost:${port}`);
 });
+
+
