@@ -32,10 +32,6 @@ function setupEventListeners() {
       e.preventDefault();
       const tabName = link.getAttribute('data-tab');
       switchTab(tabName);
-
-      // Update active state in sidebar
-      document.querySelectorAll('.nav-link').forEach((l) => l.classList.remove('active'));
-      link.classList.add('active');
     });
   });
 
@@ -50,10 +46,18 @@ function setupEventListeners() {
   // Filter buttons
   document.querySelectorAll('.filter-btn').forEach((btn) => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
+      const filterType = btn.getAttribute('data-filter-type');
+      const filterValue = btn.getAttribute('data-filter-value');
+      
+      // Remove active class from all buttons in the same group
+      document.querySelectorAll(`.filter-btn[data-filter-type="${filterType}"]`).forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
-      const filter = btn.getAttribute('data-filter');
-      filterInquiries(filter);
+
+      if (filterType === 'inquiry') {
+        filterInquiries(filterValue);
+      } else if (filterType === 'enrollment') {
+        filterEnrollments(filterValue);
+      }
     });
   });
 
@@ -76,11 +80,23 @@ function switchTab(tabName) {
   });
 
   // Show selected tab
-  document.getElementById(tabName).classList.add('active');
+  const tab = document.getElementById(tabName);
+  if (tab) {
+    tab.classList.add('active');
+  }
+
+  // Update active state in sidebar
+  document.querySelectorAll('.nav-link').forEach((l) => l.classList.remove('active'));
+  const activeLink = document.querySelector(`.nav-link[data-tab="${tabName}"]`);
+  if (activeLink) {
+    activeLink.classList.add('active');
+  }
 
   // Load data for specific tabs
   if (tabName === 'inquiries') {
     loadInquiries();
+  } else if (tabName === 'enrollments') {
+    loadEnrollments();
   } else if (tabName === 'overview') {
     loadOverview();
   }
@@ -88,26 +104,27 @@ function switchTab(tabName) {
 
 async function loadOverview() {
   try {
-    const result = await getAllInquiries();
+    const [inquiryResult, enrollmentResult] = await Promise.all([
+      getAllInquiries(),
+      getAllEnrollments()
+    ]);
 
-    if (result.success && result.data) {
-      const inquiries = result.data;
-
-      // Calculate statistics
-      const total = inquiries.length;
-      const pending = inquiries.filter((i) => i.status === 'pending').length;
-      const reviewed = inquiries.filter((i) => i.status === 'reviewed').length;
-      const spam = inquiries.filter((i) => i.status === 'spam').length;
-
-      // Update stats
-      document.getElementById('totalCount').textContent = total;
-      document.getElementById('pendingCount').textContent = pending;
-      document.getElementById('reviewedCount').textContent = reviewed;
-      document.getElementById('spamCount').textContent = spam;
-
-      // Show recent inquiries (last 5)
+    if (inquiryResult.success && inquiryResult.data) {
+      const inquiries = inquiryResult.data;
+      document.getElementById('totalInquiryCount').textContent = inquiries.length;
+      
       const recent = inquiries.slice(0, 5);
       displayRecentInquiries(recent);
+    }
+
+    if (enrollmentResult.success && enrollmentResult.data) {
+      const enrollments = enrollmentResult.data;
+      const pending = enrollments.filter((e) => e.status === 'pending').length;
+      const reviewed = enrollments.filter((e) => e.status === 'reviewed' || e.status === 'accepted' || e.status === 'rejected').length;
+      
+      document.getElementById('totalEnrollmentCount').textContent = enrollments.length;
+      document.getElementById('pendingCount').textContent = pending;
+      document.getElementById('reviewedCount').textContent = reviewed;
     }
   } catch (error) {
     console.error('Error loading overview:', error);
@@ -170,14 +187,14 @@ async function loadInquiries() {
 }
 
 function filterInquiries(status) {
-  const items = document.querySelectorAll('.inquiry-item');
+  const items = document.querySelectorAll('#inquiriesList .inquiry-item');
 
   items.forEach((item) => {
-    if (status === '') {
+    if (!status) {
       item.style.display = 'block';
     } else {
-      const itemStatus = item.querySelector('.inquiry-status').textContent.toLowerCase();
-      item.style.display = itemStatus === status.toUpperCase() ? 'block' : 'none';
+      const itemStatus = item.dataset.status;
+      item.style.display = itemStatus === status ? 'block' : 'none';
     }
   });
 }
@@ -193,7 +210,7 @@ function displayInquiries(inquiries) {
   container.innerHTML = inquiries
     .map(
       (inquiry) => `
-    <div class="inquiry-item">
+    <div class="inquiry-item" data-status="${inquiry.status}">
       <div class="inquiry-header">
         <div>
           <div class="inquiry-sender">${inquiry.firstName} ${inquiry.lastName}</div>
@@ -275,22 +292,20 @@ function showInquiryDetails(inquiry) {
   openModal();
 }
 
-async function updateInquiryStatus(inquiryId) {
-  const statusSelect = document.getElementById('statusSelect');
-  const newStatus = statusSelect.value;
-
+async function updateInquiryStatus(inquiryId, newStatus) {
   try {
-    const result = await updateInquiryStatus(inquiryId, newStatus);
+    const result = await updateInquiry(inquiryId, { status: newStatus });
 
     if (result.success) {
       alert('✓ Status updated successfully!');
       closeModal();
       loadInquiries();
+      loadOverview();
     } else {
-      alert('❌ Failed to update status');
+      alert(`❌ Failed to update status: ${result.message}`);
     }
   } catch (error) {
-    alert('❌ Error: ' + error.message);
+    alert(`❌ Error: ${error.message}`);
   }
 }
 
@@ -306,11 +321,174 @@ async function deleteInquiry(inquiryId) {
       alert('✓ Inquiry deleted successfully!');
       closeModal();
       loadInquiries();
+      loadOverview();
     } else {
-      alert('❌ Failed to delete inquiry');
+      alert(`❌ Failed to delete inquiry: ${result.message}`);
     }
   } catch (error) {
-    alert('❌ Error: ' + error.message);
+    alert(`❌ Error: ${error.message}`);
+  }
+}
+
+// +++++ ENROLLMENT FUNCTIONS +++++
+
+async function loadEnrollments() {
+  try {
+    const result = await getAllEnrollments();
+    if (result.success && result.data) {
+      displayEnrollments(result.data);
+    } else {
+      document.getElementById('enrollmentsList').innerHTML = `<p class="loading-msg">${result.message || 'No enrollments found.'}</p>`;
+    }
+  } catch (error) {
+    console.error('Error loading enrollments:', error);
+    document.getElementById('enrollmentsList').innerHTML = `<p class="loading-msg" style="color: red;">Error loading enrollments. Please try again.</p>`;
+  }
+}
+
+function displayEnrollments(enrollments) {
+  const container = document.getElementById('enrollmentsList');
+  if (enrollments.length === 0) {
+    container.innerHTML = '<p class="loading-msg">No enrollment applications found.</p>';
+    return;
+  }
+
+  container.innerHTML = enrollments.map(enrollment => `
+    <div class="inquiry-item" data-status="${enrollment.status}">
+      <div class="inquiry-header">
+        <div>
+          <div class="inquiry-sender">${enrollment.firstName} ${enrollment.lastName}</div>
+          <div class="inquiry-meta">
+            <span>${enrollment.email}</span>
+            <span>${enrollment.phone}</span>
+          </div>
+        </div>
+        <span class="inquiry-status ${enrollment.status}">${enrollment.status.toUpperCase()}</span>
+      </div>
+      <div class="inquiry-message">
+        Applying for <strong>${enrollment.program}</strong>
+      </div>
+      <div class="inquiry-meta">
+        <span>📅 Submitted: ${new Date(enrollment.createdAt).toLocaleDateString()}</span>
+      </div>
+    </div>
+  `).join('');
+
+  // Add click handlers
+  document.querySelectorAll('#enrollmentsList .inquiry-item').forEach((item, index) => {
+    item.addEventListener('click', () => {
+      showEnrollmentDetails(enrollments[index]);
+    });
+  });
+}
+
+function filterEnrollments(status) {
+  const items = document.querySelectorAll('#enrollmentsList .inquiry-item');
+  items.forEach(item => {
+    if (!status) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = item.dataset.status === status ? 'block' : 'none';
+    }
+  });
+}
+
+function showEnrollmentDetails(enrollment) {
+  const details = document.getElementById('inquiryDetails');
+
+  details.innerHTML = `
+    <div class="details-header">
+      <h2 class="details-name">${enrollment.firstName} ${enrollment.lastName}</h2>
+      <p class="details-email">${enrollment.email}</p>
+    </div>
+
+    <div class="detail-field">
+      <label class="detail-label">Status</label>
+      <select id="statusSelect" class="detail-value" style="width: 100%; padding: 8px; border: 1px solid var(--border); border-radius: 4px;">
+        <option value="pending" ${enrollment.status === 'pending' ? 'selected' : ''}>Pending</option>
+        <option value="accepted" ${enrollment.status === 'accepted' ? 'selected' : ''}>Accepted</option>
+        <option value="rejected" ${enrollment.status === 'rejected' ? 'selected' : ''}>Rejected</option>
+        <option value="waitlisted" ${enrollment.status === 'waitlisted' ? 'selected' : ''}>Waitlisted</option>
+      </select>
+    </div>
+
+    <div class="detail-grid">
+      <div class="detail-field">
+        <label class="detail-label">Phone</label>
+        <div class="detail-value">${enrollment.phone}</div>
+      </div>
+      <div class="detail-field">
+        <label class="detail-label">Date of Birth</label>
+        <div class="detail-value">${enrollment.dateOfBirth}</div>
+      </div>
+      <div class="detail-field">
+        <label class="detail-label">Gender</label>
+        <div class="detail-value">${enrollment.gender}</div>
+      </div>
+      <div class="detail-field">
+        <label class="detail-label">National ID</label>
+        <div class="detail-value">${enrollment.nationalId}</div>
+      </div>
+    </div>
+
+    <div class="detail-field">
+      <label class="detail-label">Program Choice 1</label>
+      <div class="detail-value">${enrollment.program}</div>
+    </div>
+    ${enrollment.programSecond ? `
+    <div class="detail-field">
+      <label class="detail-label">Program Choice 2</label>
+      <div class="detail-value">${enrollment.programSecond}</div>
+    </div>` : ''}
+
+    <div class="details-actions">
+      <button class="action-btn primary" onclick="updateEnrollmentStatus('${enrollment._id}')">Update Status</button>
+      <button class="action-btn danger" onclick="deleteEnrollment('${enrollment._id}')">Delete</button>
+      <button class="action-btn secondary" onclick="closeModal()">Close</button>
+    </div>
+  `;
+
+  openModal();
+}
+
+async function updateEnrollmentStatus(enrollmentId) {
+  const statusSelect = document.getElementById('statusSelect');
+  const newStatus = statusSelect.value;
+
+  try {
+    const result = await updateEnrollmentStatus(enrollmentId, newStatus);
+
+    if (result.success) {
+      alert('✓ Status updated successfully!');
+      closeModal();
+      loadEnrollments();
+      loadOverview();
+    } else {
+      alert(`❌ Failed to update status: ${result.message}`);
+    }
+  } catch (error) {
+    alert(`❌ Error: ${error.message}`);
+  }
+}
+
+async function deleteEnrollment(enrollmentId) {
+  if (!confirm('Are you sure you want to delete this enrollment application? This cannot be undone.')) {
+    return;
+  }
+
+  try {
+    const result = await deleteEnrollment(enrollmentId);
+
+    if (result.success) {
+      alert('✓ Enrollment application deleted successfully!');
+      closeModal();
+      loadEnrollments();
+      loadOverview();
+    } else {
+      alert(`❌ Failed to delete application: ${result.message}`);
+    }
+  } catch (error) {
+    alert(`❌ Error: ${error.message}`);
   }
 }
 
