@@ -194,3 +194,54 @@ function getStoredAdminUser() {
   const user = localStorage.getItem('adminUser');
   return user ? JSON.parse(user) : null;
 }
+
+/* ── ENROLLMENT API ─────────────────────────────────────── */
+
+/**
+ * Submit a new enrollment (public)
+ */
+async function submitEnrollment(formData) {
+  return apiCall('/enrollments', {
+    method: 'POST',
+    body: JSON.stringify(formData),
+  });
+}
+
+/**
+ * Get all enrollments (admin)
+ */
+async function getAllEnrollments(filters = {}) {
+  let query = '';
+  if (filters.status) query += `?status=${filters.status}`;
+  return apiCall(`/enrollments${query}`, {
+    method: 'GET',
+  });
+}
+
+/**
+ * Get single enrollment by ID (admin)
+ */
+async function getEnrollment(id) {
+  return apiCall(`/enrollments/${id}`, {
+    method: 'GET',
+  });
+}
+
+/**
+ * Update enrollment status (admin)
+ */
+async function updateEnrollmentStatus(id, status, notes = '') {
+  return apiCall(`/enrollments/${id}/status`, {
+    method: 'PATCH',
+    body: JSON.stringify({ status, notes }),
+  });
+}
+
+/**
+ * Delete enrollment (admin)
+ */
+async function deleteEnrollment(id) {
+  return apiCall(`/enrollments/${id}`, {
+    method: 'DELETE',
+  });
+}

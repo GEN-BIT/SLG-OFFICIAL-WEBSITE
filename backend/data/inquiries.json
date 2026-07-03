@@ -1,0 +1,20 @@
+{
+  "inquiries": [
+    {
+      "_id": "a8nGSQiopXZ1w3DHpFq3r",
+      "firstName": "enzo",
+      "lastName": "ihirwe",
+      "email": "ihirweenzo1@gmail.com",
+      "phone": "456756565657",
+      "enquiryType": "enroll",
+      "program": "",
+      "subject": "Program of Interest: Software Development (SOD)",
+      "message": "hi",
+      "status": "pending",
+      "createdAt": "2026-07-03T08:46:37.921Z",
+      "updatedAt": "2026-07-03T08:46:37.921Z",
+      "isSpam": false,
+      "spamMarkedAt": null
+    }
+  ]
+}
