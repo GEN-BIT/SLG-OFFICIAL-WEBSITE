@@ -1,0 +1,46 @@
+{
+  "enrollments": [
+    {
+      "_id": "ZJZ8WCxrwkbxnsGylIdbU",
+      "firstName": "IHIRWE",
+      "lastName": "ENZO",
+      "dateOfBirth": "2009-05-24",
+      "gender": "male",
+      "email": "johnsonenzo255@gmail.com",
+      "phone": "+250788542614",
+      "nationalId": "1",
+      "district": "GASABO",
+      "lastSchool": "GS MATER DEI",
+      "examType": "olevel",
+      "examScore": "99",
+      "examYear": "2022",
+      "program": "Electrical Technology (ETE)",
+      "programSecond": "Software Development (SOD)",
+      "status": "pending",
+      "createdAt": "2026-07-03T09:19:39.853Z",
+      "updatedAt": "2026-07-03T09:19:39.853Z",
+      "notes": ""
+    },
+    {
+      "_id": "TevjQx0EwfFrjlWe_skez",
+      "firstName": "IHIRWE",
+      "lastName": "ENZO",
+      "dateOfBirth": "2009-05-24",
+      "gender": "male",
+      "email": "johnsonenzo255@gmail.com",
+      "phone": "456756565657",
+      "nationalId": "13456896455555",
+      "district": "GASABO",
+      "lastSchool": "GS MATER DEI",
+      "examType": "olevel",
+      "examScore": "88",
+      "examYear": "2024",
+      "program": "Software Development (SOD)",
+      "programSecond": "Software Development (SOD)",
+      "status": "pending",
+      "createdAt": "2026-07-03T09:18:24.133Z",
+      "updatedAt": "2026-07-03T09:18:24.133Z",
+      "notes": ""
+    }
+  ]
+}
