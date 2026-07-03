@@ -3,7 +3,7 @@
  * Handles all communication with the backend
  */
 
-const API_URL = "http://localhost:5001/api"; // Replace with your backend API URL
+const API_URL = "https://your-render-url.onrender.com"; // Replace with your backend API URL
 
 /**
  * Generic fetch wrapper with error handling
