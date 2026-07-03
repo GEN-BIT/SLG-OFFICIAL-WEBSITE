@@ -1,6 +1,27 @@
 {
   "enrollments": [
     {
+      "_id": "BhoNNVwpp-O0UPQy-sz-S",
+      "firstName": "IHIRWE",
+      "lastName": "ENZO",
+      "dateOfBirth": "2000-03-05",
+      "gender": "female",
+      "email": "ihirweenzo3@gmail.com",
+      "phone": "+250788542614",
+      "nationalId": "4653246246262",
+      "district": "GASABO",
+      "lastSchool": "GS MATER DEI",
+      "examType": "primary",
+      "examScore": "455",
+      "examYear": "2022",
+      "program": "Software Development (SOD)",
+      "programSecond": "Electronics (ELE)",
+      "status": "pending",
+      "createdAt": "2026-07-03T09:57:31.367Z",
+      "updatedAt": "2026-07-03T09:57:31.367Z",
+      "notes": ""
+    },
+    {
       "_id": "ZJZ8WCxrwkbxnsGylIdbU",
       "firstName": "IHIRWE",
       "lastName": "ENZO",
